@@ -1,6 +1,91 @@
 <template name="home">
 
-		Home
-		<a href="/profile">Profile</a>
+		<!-- <h1>Home</h1>
+
+		<div id="fui-scroll">
+			{{#each list}}
+
+				<div style="height:200px;">{{this}} <a href="/profile"><img src="http://lorempixel.com/200/200/?v={{this}}"></a></div>
+
+			{{/each}}
+		</div>
+ -->
+
+		<div class="fui-header">
+			<h1>Feed</h1>
+		</div>
+
+		<div class="fui-subheader">
+		   <a class="fui-button fui-block fui-solid fui-icon-right fui-text-left bg-dark-primary" href="/profile">
+				Where have you eaten {{currentUser.profile.facebook.first_name}}?
+				<i class="icon ion-ios-compose-outline"></i>
+		   </a>
+		   <!-- <a class="fui-button fui-block fui-solid fui-icon-right fui-text-left bg-dark-primary" href="/map">MAP</a> -->
+		</div>
+
+		{{#if newFeedItems}}
+			<a class="new-items fui-pill">{{newFeedItems}} new items</a>
+		{{/if}}
+
+		<div class="fui-scroll fui-has-subheader">
+
+			<div class="list feed-list">
+
+
+					{{#each list}}
+
+						    <a class="fui-item fui-avatar-left" href="/profile" style="height:100px;">
+						      <img src="http://lorempixel.com/200/200/" class="fui-avatar">
+						      <h2>{{this}}</h2>
+						      <h3>rated</h3>
+						    </a>
+					    
+						    <a class="fui-item" href="/profile" style="height:200px;">
+						       <h2>{{restaurantName}}</h2>
+						       <h3>{{restaurantVicinity}}</h3>
+
+						       {{#if comment}}
+						       		<div class="comment">"{{comment}}"</div>
+						       {{/if}}
+
+						       <div class="feed-rating">
+						       		<div class="feed-food">
+						       			<div class="feed-rating-bg opacity-100"></div>
+						       			<label>Food</label>
+						       			<h2>Great</h2>
+						       		</div>
+						       		<div class="feed-service">
+						       			<div class="feed-rating-bg opacity-100"></div>
+						       			<label>Service</label>
+						       			<h2>Great</h2>
+						       		</div>
+						       </div>
+
+							    {{#if photos}}
+							    	{{#each photos}}
+									    <div class="fui-photo feed-photo">
+									       <img data-src="{{url}}" class="fui-image fui-block lazyfade lazyload">
+									       {{#if caption}}
+									       		<div class="fui-caption">{{caption}}</div>
+									       {{/if}}
+									    </div>
+								    {{/each}}
+							    {{/if}}
+
+						    </a>
+
+						    <div class="fui-divider"></div>
+					  
+
+					{{/each}}
+
+				{{#if isLoading}}
+					{{>spinner}}
+				{{/if}}
+				
+			</div>
+		
+
+		</div>
 
 </template>

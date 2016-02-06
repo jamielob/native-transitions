@@ -12,7 +12,7 @@ if (Meteor.isCordova) {
 	Session.setDefault('ntDefaultBackDirection', 'right');
 
 	//Default transition duration
-	Session.setDefault('ntDefaultDuration', '350');
+	Session.setDefault('ntDefaultDuration', '400');
 	
 	//Set the initial values to the defaults
 	Session.setDefault('ntTransition', Session.get('ntDefaultTransition'));

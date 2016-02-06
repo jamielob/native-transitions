@@ -1,0 +1,655 @@
+//STATUS BAR
+.fui-status-bar
+		position absolute
+		top 0
+		display block
+		width 100%
+		height $statusBarHeight
+		background-color $statusBarBackgroundColor
+		-webkit-transition background-color 0.3s ease
+		transition background-color 0.3s ease
+		display none //hiding this for now since it makes it easier for cross ios/android dev
+
+//CONTAINER
+.fui-container
+	margin-top $statusBarHeight
+	margin 0 //hiding this for now since it makes it easier for cross ios/android dev
+
+
+//LINKS
+a
+	text-decoration none
+	color inherit
+	
+
+
+
+//TEXT
+h1, h2, h3, h4, h5, h6
+	padding-bottom $verticalSpacing
+
+h1
+	font-size 1.8em
+h2
+	font-size 1.2em
+h3
+	font-size 1.1em
+h4
+	font-size 1em
+h5
+	font-size 0.9em
+h6
+	font-size 0.8em
+	
+p
+	padding-bottom $verticalSpacing
+	
+	&.fui-small
+		font-size $fontSize * $smallMultiplier
+		
+	&.fui-large
+		font-size $fontSize * $largeMultiplier
+
+.fui-text-center
+	text-align center !important
+	
+.fui-text-left
+	text-align left !important
+	
+.fui-text-right
+	text-align right !important
+
+
+
+//Utility
+.fui-no-flicker
+	-webkit-backface-visibility hidden
+	backface-visibility hidden
+	-webkit-perspective 1000
+	perspective 1000
+	-webkit-transform-style preserve-3d
+
+//Add the drop shadow 
+
+// .fui-content
+// 	-webkit-box-shadow 0px 0px 10px 0px rgba(0,0,0,0.1)
+// 	box-shadow 0px 0px 10px 0px rgba(0,0,0,0.1)
+
+//Buttons
+.fui-button
+	position relative
+	display inline-block
+	padding-top $buttonPaddingVertical - 1px
+	padding-bottom $buttonPaddingVertical + 1px
+	padding-left $buttonPaddingHorizontal
+	padding-right $buttonPaddingHorizontal
+	margin-top $verticalSpacing
+	margin-bottom $verticalSpacing 
+	border-width $buttonBorderWidth
+	border-color $buttonBorderColor
+	border-style $buttonBorderStyle
+	vertical-align middle
+	border-radius($borderRadius)
+	
+	&.fui-large
+		font-size $fontSize * $largeMultiplier
+		padding-top $buttonPaddingVertical * $largeMultiplier - 1px
+		padding-bottom $buttonPaddingVertical * $largeMultiplier + 1px
+	
+	&.fui-small
+		font-size $fontSize * $smallMultiplier
+		padding-top $buttonPaddingVertical * $smallMultiplier - 1px
+		padding-bottom $buttonPaddingVertical * $smallMultiplier + 1px
+
+	&.fui-block
+		display block
+		width 100%
+	
+	&.fui-solid
+		background-color $buttonBackgroundColor
+		color $buttonColor
+		border none
+
+	&:active	
+		border-color darken($buttonBorderColor, 30%)
+		
+	&.fui-solid:active
+		background-color darken($buttonBackgroundColor, 30%)
+		
+
+
+//PADDING
+.fui-padding 
+	padding $padding
+	
+	&.fui-small
+		padding-top $padding * $smallMultiplier
+		padding-bottom $padding * $smallMultiplier
+	
+	&.fui-large
+		padding-top $padding * $largeMultiplier
+		padding-bottom $padding * $largeMultiplier
+
+
+//BORDERS
+
+.fui-border
+	border 1px solid $colorBorder
+	
+.fui-border-top
+	border-top 1px solid $colorBorder
+	
+.fui-border-right
+	border-right 1px solid $colorBorder
+
+.fui-border-bottom
+	border-bottom 1px solid $colorBorder
+	
+.fui-border-left
+	border-left 1px solid $colorBorder
+
+
+//HEADER
+.fui-header
+	position absolute
+	top 0
+	width 100%
+	height $headerHeight
+	background-color $headerBackgroundColor
+	color $headerColor
+	z-index 5
+	overflow hidden
+	
+	h1 
+		display block
+		width 75%
+		margin 0 auto
+		text-align center
+		line-height $headerHeight - 2px
+		font-size 1em
+		white-space nowrap
+		overflow hidden
+		text-overflow ellipsis
+
+	.fui-button 
+		position absolute
+		left 0
+		top 0
+		width 15%
+		height 100%
+		line-height $headerHeight - 6px
+		padding 0
+		margin 0
+		border none
+		text-align center
+			
+		i
+			// position absolute
+			// top 50%
+			// -webkit-transform translateY(-50%)
+			// transform translateY(-50%)
+			// margin-top -2px
+				
+		&.fui-text
+			font-size 0.7em
+			width auto
+			padding 0 10px
+			margin-top 4px
+			margin-right 10px
+			height auto
+			line-height $headerHeight - 9px
+	
+		&.fui-right
+			right 0
+			left auto
+		
+		&.fui-block
+			top 0
+			width 100%
+			height 100%
+			margin 0
+			padding 0 $padding
+			line-height $headerHeight - 2px
+			border-radius(0)
+			
+		&:active
+			background-color darken($headerBackgroundColor, 30%)
+		
+//SUBHEADER
+.fui-subheader
+	@extend .fui-header
+	top $headerHeight
+	height $subheaderHeight
+	background-color $subheaderBackgroundColor
+	color $headerColor
+	padding-top 0
+	z-index 2
+	
+	.fui-button
+		&.fui-block
+			line-height $subheaderHeight - 2px
+			
+			&.fui-icon-right i:last-child
+				right 22px
+	
+
+//FOOTER
+.fui-footer
+	@extend .fui-header
+	top auto
+	bottom 0
+	height $footerHeight
+	background-color $footerBackgroundColor
+	color $footerColor
+	
+	.fui-button
+		&.fui-block
+			line-height $footerHeight - 2px
+		
+		
+			
+//SCROLLING CONTENT
+.fui-scroll
+	overflow-x hidden
+	overflow-y scroll
+	-webkit-overflow-scrolling touch
+	top $headerHeight
+	right 0
+	bottom 0
+	left 0
+	position absolute
+	z-index 1
+	background-color $fuiScrollBackgroundColor
+	
+.fui-element .fui-scroll
+	overflow-x hidden
+	overflow-y scroll
+	-webkit-overflow-scrolling touch
+	top 0
+	right 0
+	bottom 0
+	left 0
+	position relative
+	z-index 1
+
+	&.fui-padding
+		padding-top $padding
+		
+
+
+
+//Adjust fui-scroll for different elements
+.fui-scroll.fui-no-header
+	top 0
+	
+.fui-scroll.fui-has-subheader
+	top $headerHeight + $subheaderHeight
+
+[fui-tabs] .fui-scroll,
+.fui-scroll.fui-has-tabs
+	bottom $tabsHeight
+	
+.fui-scroll.fui-has-footer
+	bottom $footerHeight
+	
+[fui-tabs] .fui-slideUp .fui-element
+	bottom $tabsHeight
+	
+		
+
+//Fixes z-index problem with scrolling items underneath in fast-ui and fast-ui-swipe
+.fui-last .fui-scroll
+	//overflow: hidden  //Was causing a flicker so disabled.  Doesn't seem to be a problem anymore.
+
+
+//DIVIDER
+.fui-divider
+	background-color $dividerBackgroundColor
+	color $dividerColor
+	height $dividerHeight
+	width 100%
+
+//ITEM HEADER
+.fui-item-header
+	display block
+	background-color $itemHeaderBackgroundColor
+	color $itemHeaderColor
+	font-size 0.9em
+	padding-top $verticalSpacing * 2
+	padding-bottom $verticalSpacing * 2
+	padding-left $padding
+	padding-right $padding
+	text-align center
+
+
+//ITEM
+.fui-item
+	position relative
+	display block
+	border-bottom $colorGreyLight 1px solid
+	padding $padding
+	font-size 90%
+	
+	h2
+		padding-bottom 3px
+		text-overflow ellipsis
+		white-space nowrap
+		overflow hidden
+	
+	h3
+		font-size 0.9em
+		color $colorGreyMedium
+		text-overflow ellipsis
+		white-space nowrap
+		overflow hidden
+
+	p
+		padding-bottom $verticalSpacing
+	p:last-child
+		padding-bottom 0
+		
+	&.fui-small
+		padding-top: $padding * $smallMultiplier	
+		padding-bottom: $padding * $smallMultiplier	
+		
+	.fui-stamp
+		position absolute
+		top $padding
+		right $padding
+		color $colorGreyMedium
+		font-size 0.7em
+
+
+//ICONS
+.fui-icon-right
+	padding-right 50px
+	
+	i:last-child
+		position absolute
+		right $padding
+		top 50%
+		-webkit-transform translateY(-50%)
+		transform translateY(-50%)
+		width 15px
+		text-align center
+		
+.fui-icon-left
+	padding-left 50px
+	
+	i:first-child
+		position absolute
+		left $padding
+		top 50%
+		-webkit-transform translateY(-50%)
+		transform translateY(-50%)
+		width 15px
+		text-align center
+		
+
+//AVATARS
+.fui-avatar
+	border-radius(2px)
+	width $avatarSize
+	height $avatarSize
+	display inline-block
+	
+.fui-avatar-right
+	padding-right $avatarSize + $padding + 15px
+	
+	.fui-avatar:last-child
+		position absolute
+		right $padding
+		top 50%
+		-webkit-transform translateY(-50%)
+		transform translateY(-50%)
+		
+.fui-avatar-left
+	padding-left $avatarSize + $padding + 15px
+	
+	.fui-avatar:first-child
+		position absolute
+		left $padding
+		top 50%
+		-webkit-transform translateY(-50%)
+		transform translateY(-50%)
+	
+	h2
+		paddin-top 2px
+		
+
+//RANKS
+.fui-rank
+	border-radius(2px)
+	width $rankSize
+	height $rankSize
+	display inline-block
+	background-color $rankBackgroundColor
+	color $rankColor
+	font-size $rankFontSize
+	text-align center
+	padding-right 0.5px
+	line-height $avatarSize - 3px
+	
+	&.fui-small
+		width $rankSize * $smallMultiplier
+		height $rankSize * $smallMultiplier
+		line-height $avatarSize * $smallMultiplier - 1px
+		font-size $rankFontSize * $smallMultiplier
+		
+		i
+			position relative
+			display block
+			top 2px
+	
+.fui-rank-right
+	padding-right $rankSize + $padding + 15px
+	
+	.fui-rank:last-child
+		position absolute
+		right $padding
+		top 50%
+		-webkit-transform translateY(-50%)
+		transform translateY(-50%)
+		
+	&.fui-small
+		padding-right ($rankSize * $smallMultiplier) + $padding + 15px
+		
+		h2
+			padding-top 2px
+		
+.fui-rank-left
+	padding-left $rankSize + $padding + 15px
+	
+	.fui-rank:first-child
+		position absolute
+		left $padding
+		top 50%
+		-webkit-transform translateY(-50%)
+		transform translateY(-50%)
+		
+	&.fui-small
+		padding-left ($rankSize * $smallMultiplier) + $padding + 15px
+		
+		h2
+			padding-top 2px
+
+
+//ITEM LEFT
+// .fui-avatar-left
+// 	min-height $avatarSize 
+// 	padding-left $avatarSize + 15px
+	
+// 	> img
+// 		position absolute
+// 		top 0
+// 		left 0
+		
+// 	&.fui-small
+// 		min-height $avatarSize * $smallMultiplier
+// 		padding-left $avatarSize * $smallMultiplier + 15px
+		
+// 		> :first-child
+// 			width $avatarSize * $smallMultiplier
+// 			height $avatarSize * $smallMultiplier
+// 			font-size $rankFontSize * $smallMultiplier
+// 			line-height $avatarSize * $smallMultiplier
+// 			padding-right 0
+			
+// 		h2
+// 			padding-bottom 0px
+// 			font-size 1em
+// 			margin-top -2px
+	
+// 		h3
+// 			font-size 0.7em
+// 			color $colorGreyMedium
+
+
+
+//PILLS
+
+.fui-pill
+	border-radius(20px)
+	background-color $colorDarkPrimary
+	color $colorTextLight
+	width auto
+	display inline-block
+	padding 10px 15px 12px 15px
+	font-size 0.8em
+		
+
+//Tabs
+.fui-tabs
+	display -webkit-flex
+	display flex
+	-webkit-justify-content space-around
+	justify-content space-around
+	align-items center
+	-webkit-align-items center
+	width 100%
+	height $tabsHeight
+	background-color $tabsBackgroundColor
+	color $tabsColor
+	border-top $tabsBorderColor $tabsBorderWidth $tabsBorderStyle
+	overflow hidden
+	
+	a
+		flex 1
+		-webkit-flex 1
+		flex-grow 1
+		-webkit-flex-grow 1
+		color $tabsColor
+		height 100%
+		display -webkit-flex
+		display flex
+		align-items center
+		-webkit-align-items center
+		justify-content center
+		-webkit-justify-content center
+		flex-direction column
+		-webkit-flex-direction column
+		font-size 0.7em
+		line-height 0.5em
+		text-align center
+	
+	a i
+		display block
+		font-size 2.7em
+		text-align center
+		line-height 1em
+		margin-top -5px
+	
+	a.fui-active, a:active
+		color $tabsActiveColor
+		
+	a:last-child
+		border-right 0
+		
+.fui-tabs-divider a
+	border-right $tabsDividerWidth $tabsDividerStyle $tabsDividerColor
+	
+
+.fui-tabs-fixed
+	position absolute
+	bottom 0
+	left 0
+	z-index 5
+	
+.fui-tabs-indicators
+	height $tabsHeight * 1.3
+	
+	a
+		font-size 0.9em
+		padding-top 8px
+		color $colorGreyMedium
+		
+		i
+			margin-top 0
+			padding-top 5px
+			font-size 2em
+			visibility hidden
+
+//ELEMENTS
+
+.fui-slideDown .fui-element
+	// -webkit-box-shadow 0px 0px 20px 0px rgba(0,0,0,0.1)
+	// box-shadow 0px 0px 20px 0px rgba(0,0,0,0.1)
+	padding-top $headerHeight
+	overflow-x hidden
+	overflow-y scroll
+	-webkit-overflow-scrolling touch
+
+.fui-modal .fui-element
+	z-index 6 //Popups should be on top of headers
+	// -webkit-box-shadow 0px 0px 20px 0px rgba(0,0,0,0.1)
+	// box-shadow 0px 0px 20px 0px rgba(0,0,0,0.1)
+	overflow hidden
+	border-radius($borderRadius)
+	
+
+.fui-modal.fui-element-in .fui-overlay
+	z-index 6 //Popups should be on top of headers
+	-webkit-animation fui-fade-modal-in 0.35s 0s cubic-bezier(0.215, 0.610, 0.355, 1.000) both
+	animation fui-fade-modal-in 0.35s 0s cubic-bezier(0.215, 0.610, 0.355, 1.000) both
+	background-color $overlayBackgroundColor
+
+@keyframes fui-fade-modal-in 
+	from  
+		opacity 0
+	to
+		opacity $overlayOpacity
+
+
+.fui-modal.fui-element-out .fui-overlay
+	display block
+	-webkit-animation fui-fade-out 0.35s 0s cubic-bezier(0.215, 0.610, 0.355, 1.000) both
+	animation fui-fade-out 0.35s 0s cubic-bezier(0.215, 0.610, 0.355, 1.000) both
+	
+
+@keyframes fui-fade-out
+	from
+		opacity $overlayOpacity
+	to
+		opacity 0
+
+
+		
+
+
+
+//COMMON
+.fui-button.fui-facebook
+	@extend .fui-button.fui-solid
+	background-color $colorFacebook
+	
+	&:active	
+		border-color darken($colorFacebook, 30%)
+		
+	&.fui-solid:active
+		background-color darken($colorFacebook, 30%)
+		
+
+
+//ACTIVE CLICKS
+// a:active
+// 	background-color $showClickBackgroundColor

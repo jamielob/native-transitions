@@ -1,0 +1,73 @@
+.fui-image
+	border-radius(2px)
+	
+	&.fui-block
+		display block
+		width 100%
+		height auto
+
+.fui-slider
+	width 100%
+	//height $sliderHeight
+	overflow-y hidden
+	overflow-x scroll 
+	display block
+	white-space nowrap
+	-webkit-overflow-scrolling touch
+	padding-right $sliderSpacing + 3 //Add back in margin removed below
+	padding-top $sliderSpacing
+	padding-bottom $sliderSpacing
+	
+	
+	.fui-photo //Whatever the first elements are within the slider, whether they are images, divs, anchors, etc
+		border-radius(2px)
+		position relative
+		display inline-block
+		//height 100%
+		//min-width 100px //So something is show while loading
+		margin-left $sliderSpacing
+		margin-right -3px //Remove inline block extra spacing
+		overflow hidden
+	
+		img 	
+			height $sliderHeight
+			// -webkit-transition all 300ms
+			// transition all 300ms
+			//min-width 10vw
+			
+		// .fui-enlarged
+		// 	min-width 100vw
+		// 	height auto
+
+		.fui-caption
+			font-size 0.7em
+			
+		
+
+
+//PHOTOS
+.fui-photo
+	position relative
+
+//Captions
+.fui-caption
+	position absolute
+	bottom 0
+	left 0
+	width 100%
+	height auto
+	border-radius(2px)
+	padding 10px
+	background-color $colorGreyDark
+	color $colorTextLight
+	font-size 0.8em
+	opacity 0.8
+	white-space normal
+	
+
+//Ready for fui-lazy
+//If minimum 100vw, stops all the horizontal images from loading immediately because they all have 0 width and are therefore all in view
+.fui-slider
+	[data-src]
+		width 100vw
+	

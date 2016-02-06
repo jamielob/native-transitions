@@ -14,3 +14,9 @@ Meteor.startup(function() {
 	}
 });
 ```
+
+
+
+
+#Speed
+Don't put too much on a single page otherwise the transition will have a delay.

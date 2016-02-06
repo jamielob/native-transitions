@@ -1,0 +1,186 @@
+//Reset
+
+textarea
+input[type="text"]
+input[type="password"]
+input[type="datetime"]
+input[type="datetime-local"]
+input[type="date"]
+input[type="month"]
+input[type="time"]
+input[type="week"]
+input[type="number"]
+input[type="email"]
+input[type="url"]
+input[type="search"]
+input[type="tel"]
+input[type="color"]
+select
+	display block
+	padding $inputPadding
+	color $inputColor
+	background-color #FFFFFF
+	vertical-align middle
+	font-size 0.9em
+	width 100%
+	-webkit-appearance none
+	border-radius 0
+	border none
+	font-weight $inputFontWeight
+
+
+//INPUT
+
+
+.fui-input
+	position relative
+	display -webkit-flex
+	display flex
+	align-items center
+	-webkit-align-items center
+	width 100%
+	border-radius $inputBorderRadius
+	border-color $inputBorderColor
+	border-width $inputBorderWidth
+	border-style $inputBorderStyle
+	height 50px
+	
+	label
+		-webkit-flex-basis 40%
+		flex-basis 40%
+		padding-left $padding
+	
+	i
+		-webkit-flex-basis 30px	
+		flex-basis 30px	
+		-webkit-flex-grow 0
+		flex-grow 0
+		-webkit-flex-shrink 0
+		flex-shrink 0
+		text-align right
+		color $inputIconColor
+		padding-top 10px
+		padding-bottom 10px
+		font-size 1.1em
+		
+		&.fui-clear
+			text-align left
+
+		&.fui-clear:active
+			opacity 0.5
+			
+
+	input
+		-webkit-flex-basis auto
+		flex-basis auto
+		padding-left 10px
+		padding-right $padding
+	
+	select
+		-webkit-flex-basis 220px
+		flex-basis 220px
+		-webkit-flex-grow 1
+		flex-grow 1
+		direction rtl
+		-webkit-appearance none
+		appearance none
+		text-indent 0.01px
+		text-overflow ellipsis
+		white-space nowrap
+		padding-right 40px
+		font-size 0.7em
+		
+		&:active
+			opacity 0.5
+			
+
+//SELECT
+.fui-select
+	position relative
+		
+	&:after
+		position absolute
+		top 20px
+		right 20px
+		content ""
+		border-top 5px solid
+		border-right 5px solid rgba(0, 0, 0, 0)
+		border-left 5px solid rgba(0, 0, 0, 0)
+		color $inputIconColor
+		pointer-events none
+
+	
+//Input - checkbox
+.fui-checkbox
+	display block
+	position relative
+	width 100%
+	padding-top 1px
+	border-bottom $colorGreyLight 1px solid
+	
+	//Hide the checkbox, but size it correctly
+	input[type="checkbox"]
+		display inline-block
+		height 45px
+		margin-left $padding
+		margin-right 20px
+		-webkit-appearance none
+		appearance none
+		border 0
+		background transparent
+		
+	//Add the newly styled circle
+	input[type="checkbox"]:before
+		display table
+		margin-top 8.5px
+		width 26px
+		height 26px
+		border-width 1px
+		border-style solid
+		border-radius 100%
+		border-color $checkboxBorderColor
+		background #fff
+		content ' '
+		-webkit-transition background-color 20ms ease-in-out
+		transition background-color 20ms ease-in-out
+		
+	//Change the color when it's selected
+	input[type="checkbox"]:checked:before
+		border none
+		background $checkboxBackgroundColor
+
+	//Add the checmark
+	input[type="checkbox"]:checked:after
+		-webkit-transition opacity 0.05s ease-in-out
+		transition opacity 0.05s ease-in-out
+		-webkit-transform rotate(-45deg)
+		transform rotate(-45deg)
+		position absolute
+		top 20px
+		left $padding + 6px
+		display table
+		width 14px
+		height 6px
+		border 1px solid #fff
+		border-top 0
+		border-right 0
+		content ' '
+		
+.fui-crossbox
+	@extend .fui-checkbox
+	
+	input[type="checkbox"]:checked:after
+		-webkit-transition opacity 0.05s ease-in-out
+		transition opacity 0.05s ease-in-out
+		-webkit-transform rotate(0)
+		transform rotate(0)
+		position absolute
+		top 12px
+		display table
+		width 14px
+		height 6px
+		border none
+		color #FFFFFF
+		font-size 1.7em
+		text-align center
+		content 'x'
