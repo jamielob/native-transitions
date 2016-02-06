@@ -21,6 +21,5 @@ insecure                # Allow all DB writes from clients (for prototyping)
 kadira:flow-router
 kadira:blaze-layout
 jamielob:native-transitions
-jamielob:native-scroll
 reactive-var
 stylus
