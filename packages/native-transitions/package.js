@@ -15,7 +15,7 @@ Cordova.depends({
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('1.3-cordova-beta.3');
+  api.versionsFrom('1.3-cordova-beta.2');
   api.use('ecmascript');
   api.use(['templating', 'session', 'jquery'], ['client']);
   api.addFiles('native-transitions.js', 'client');

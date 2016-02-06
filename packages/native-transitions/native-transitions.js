@@ -19,31 +19,31 @@ if (Meteor.isCordova) {
 	Session.setDefault('ntDirection', Session.get('ntDefaultDirection'));
 	Session.setDefault('ntDuration', Session.get('ntDefaultDuration'));
 
-// 	Meteor.startup(function() {
+	Meteor.startup(function() {
 		
-// 		document.addEventListener("backbutton", function() {
-// 			//Set the direction to the default back direction
-// 			Session.set('ntDirection', Session.get('ntDefaultBackDirection'));
-// 			//Navigate back
-// 			window.history.back();
-// 		}, false);
+		document.addEventListener("backbutton", function() {
+			//Set the direction to the default back direction
+			Session.set('ntDirection', Session.get('ntDefaultBackDirection'));
+			//Navigate back
+			window.history.back();
+		}, false);
 
-// 		//Check for direction and duration changes on click
-// 		$(document)
-// 			.on('click', '[data-ntTransition]', function(event) {
-// 				var ntTransition = $(event.currentTarget).data('nttransition');  //Camel case is removed in data
-// 				Session.set('ntTransition', ntTransition);
-// 			})
-// 			.on('click', '[data-ntDirection]', function(event) {
-// 				var ntDirection = $(event.currentTarget).data('ntdirection'); //Camel case is removed in data
-// 				Session.set('ntDirection', ntDirection);
-// 			})
-// 			.on('click', '[data-ntDuration]', function(event) {
-// 				var ntDuration = $(event.currentTarget).data('ntduration'); //Camel case is removed in data
-// 				Session.set('ntDuration', ntDuration);
-// 			});
+		//Check for direction and duration changes on click
+		$(document)
+			.on('click', '[data-ntTransition]', function(event) {
+				var ntTransition = $(event.currentTarget).data('nttransition');  //Camel case is removed in data
+				Session.set('ntTransition', ntTransition);
+			})
+			.on('click', '[data-ntDirection]', function(event) {
+				var ntDirection = $(event.currentTarget).data('ntdirection'); //Camel case is removed in data
+				Session.set('ntDirection', ntDirection);
+			})
+			.on('click', '[data-ntDuration]', function(event) {
+				var ntDuration = $(event.currentTarget).data('ntduration'); //Camel case is removed in data
+				Session.set('ntDuration', ntDuration);
+			});
 	
-// 	});
+	});
 
 }
 
