@@ -12,7 +12,7 @@ if (Meteor.isCordova) {
 	Session.setDefault('ntDefaultBackDirection', 'right');
 
 	//Default transition duration
-	Session.setDefault('ntDefaultDuration', '400');
+	Session.setDefault('ntDefaultDuration', '350');
 	
 	//Set the initial values to the defaults
 	Session.setDefault('ntTransition', Session.get('ntDefaultTransition'));
@@ -71,6 +71,11 @@ nt.transition = function(completed) {
 			//Check for error
 			function (error) { if (error) console.log('Native Transitions Error:' + error) },
 		);	
+
+		// window.plugins.nativepagetransitions.executePendingTransition(
+		//   function (msg) {}, // called when the animation has finished
+		//   function (msg) {)} // called in case you pass in weird values
+		// );
 
 		//Reset all to default
 		Session.set('ntTransition', Session.get('ntDefaultTransition'));

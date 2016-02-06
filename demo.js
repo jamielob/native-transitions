@@ -1,7 +1,7 @@
 if (Meteor.isClient) {
 
 	Template.registerHelper("list", function() {
-		return _.range(20);
+		return _.range(5);
 	});
 
 }

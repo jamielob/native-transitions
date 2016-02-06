@@ -23,10 +23,6 @@
 		   <!-- <a class="fui-button fui-block fui-solid fui-icon-right fui-text-left bg-dark-primary" href="/map">MAP</a> -->
 		</div>
 
-		{{#if newFeedItems}}
-			<a class="new-items fui-pill">{{newFeedItems}} new items</a>
-		{{/if}}
-
 		<div class="fui-scroll fui-has-subheader">
 
 			<div class="list feed-list">
@@ -79,9 +75,6 @@
 
 					{{/each}}
 
-				{{#if isLoading}}
-					{{>spinner}}
-				{{/if}}
 				
 			</div>
 		
