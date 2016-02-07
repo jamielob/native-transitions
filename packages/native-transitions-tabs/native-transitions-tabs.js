@@ -14,18 +14,27 @@ if (Meteor.isCordova) {
 if (Meteor.isClient) {
 
 	Session.setDefault('ntCurrentTab', 'nt-tab1');
+	Session.setDefault('ntShowContent', 'nt-show-tab1');
 
 	// Watch tab pages changes
 	Tracker.autorun(function () {
+		//Get the current tab param
 		var tab = FlowRouter.getQueryParam("tab");
 		if (tab) {
-			Session.set('ntCurrentTab', 'nt-' + tab);
-			// var div = document.getElementById(tab);
-			// if (div) {
-			// 	div.className += " nt-tab-container-current";
-	 			//$('#' + tab).addClass('nt-tab-container-current').siblings('.nt-tab-container').removeClass('nt-tab-container-current');
-	 			//$('#' + tab).css({'display':'block'});
-	 		// }
+			//Convert the to the class name
+			var tabClass = 'nt-' + tab;
+			//Check if the the class is any different to the current tab set (if it's not, we're just going back in history and don't need to do anything)
+			if (tabClass !== Session.get('ntCurrentTab')) {
+				//Set the current tabe to the current param
+				Session.set('ntCurrentTab', 'nt-' + tab);
+				//Reset the show content var (so we can show a loading spinner)
+				Session.set('ntShowContent', '');
+				//By deferring this, the inital transition between tabs is instant, no matter how big the fui-scroll dom is
+				Meteor.defer(function() {
+					//Set the show content session to the class name
+					Session.set('ntShowContent', 'nt-show-' + tab);
+				});
+		 	}
  		}
 	});
 
@@ -37,5 +46,10 @@ if (Meteor.isClient) {
 	Template.registerHelper('ntCurrentTab', function() {
 		return Session.get('ntCurrentTab');
 	});
+
+	Template.registerHelper('ntShowContent', function() {
+		return Session.get('ntShowContent');
+	});
+
 
 }

@@ -8,10 +8,23 @@
 	display: none;
 }
 
+.nt-tab-container .nt-scroll {
+	display: none;
+}
+
 .nt-tab1 .nt-tab1,
 .nt-tab2 .nt-tab2,
 .nt-tab3 .nt-tab3,
 .nt-tab4 .nt-tab4,
 .nt-tab5 .nt-tab5 {
+	display: block;
+}
+
+
+.nt-show-tab1 .nt-tab1 .nt-scroll,
+.nt-show-tab2 .nt-tab2 .nt-scroll,
+.nt-show-tab3 .nt-tab3 .nt-scroll,
+.nt-show-tab4 .nt-tab4 .nt-scroll,
+.nt-show-tab5 .nt-tab5 .nt-scroll {
 	display: block;
 }
