@@ -1,3 +1,6 @@
+/* Containers are hidden and show using pure CSS and a single Session variable as it is much quicker than jQuery hide/show */
+
+/* Container for tab pages - basically the same at nt-container but hidded by default */
 .nt-tab-container {
 	position: absolute;
 	top: 0; 
@@ -8,23 +11,30 @@
 	display: none;
 }
 
-.nt-tab-container .nt-scroll {
+/* Show the current tab */
+.nt-tab-1 .nt-tab-1,
+.nt-tab-2 .nt-tab-2,
+.nt-tab-3 .nt-tab-3,
+.nt-tab-4 .nt-tab-4,
+.nt-tab-5 .nt-tab-5 {
+	display: block;
+}
+
+/* nt-heavy can be added to any "heavy" content on a tab.  It hides content by default so that it doesn't slow down the transitions */
+.nt-tab-container .nt-heavy {
 	display: none;
 }
 
-.nt-tab1 .nt-tab1,
-.nt-tab2 .nt-tab2,
-.nt-tab3 .nt-tab3,
-.nt-tab4 .nt-tab4,
-.nt-tab5 .nt-tab5 {
+/* Show the "heavy" content a split second after we show the page */
+.nt-heavy-tab-1 .nt-tab-1 .nt-heavy,
+.nt-heavy-tab-2 .nt-tab-2 .nt-heavy,
+.nt-heavy-tab-3 .nt-tab-3 .nt-heavy,
+.nt-heavy-tab-4 .nt-tab-4 .nt-heavy,
+.nt-heavy-tab-5 .nt-tab-5 .nt-heavy {
 	display: block;
 }
 
-
-.nt-show-tab1 .nt-tab1 .nt-scroll,
-.nt-show-tab2 .nt-tab2 .nt-scroll,
-.nt-show-tab3 .nt-tab3 .nt-scroll,
-.nt-show-tab4 .nt-tab4 .nt-scroll,
-.nt-show-tab5 .nt-tab5 .nt-scroll {
-	display: block;
+/* Fixes z-index problem with scrolling items underneath */
+.nt-tabs-hidden .nt-scroll {
+	overflow: hidden;
 }
