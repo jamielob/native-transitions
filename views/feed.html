@@ -2,13 +2,13 @@
 
 		<div class="nt-subheader">
 		   <a class="nt-button nt-block nt-solid nt-icon-right nt-text-left bg-dark-primary" href="/item" nt-direction="up">
-				Where have you eaten?
+				Where have you eaten {{ntCurrentTab}}?
 				<i class="icon ion-ios-compose-outline"></i>
 		   </a>
+		   <!-- <a class="nt-button nt-block nt-solid nt-icon-right nt-text-left bg-dark-primary" href="/map">MAP</a> -->
 		</div>
 
 			{{#unless ntHeavyLoaded}}
-				<!-- <div>LOADING</div>
 				<div>LOADING</div>
 				<div>LOADING</div>
 				<div>LOADING</div>
@@ -20,7 +20,8 @@
 				<div>LOADING</div>
 				<div>LOADING</div>
 				<div>LOADING</div>
-				<div>LOADING</div> -->
+				<div>LOADING</div>
+				<div>LOADING</div>
 			{{/unless}}
 
 			<div class="nt-scroll nt-has-subheader nt-heavy">
