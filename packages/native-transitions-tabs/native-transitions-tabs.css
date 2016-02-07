@@ -21,16 +21,16 @@
 }
 
 /* nt-heavy can be added to any "heavy" content on a tab.  It hides content by default so that it doesn't slow down the transitions */
-.nt-tab-container .nt-heavy {
+.nt-tab-undefined .nt-heavy {
 	display: none;
 }
 
 /* Show the "heavy" content a split second after we show the page */
-.nt-heavy-tab-1 .nt-tab-1 .nt-heavy,
-.nt-heavy-tab-2 .nt-tab-2 .nt-heavy,
-.nt-heavy-tab-3 .nt-tab-3 .nt-heavy,
-.nt-heavy-tab-4 .nt-tab-4 .nt-heavy,
-.nt-heavy-tab-5 .nt-tab-5 .nt-heavy {
+.nt-tab-1 .nt-heavy,
+.nt-tab-2 .nt-heavy,
+.nt-tab-3 .nt-heavy,
+.nt-tab-4 .nt-heavy,
+.nt-tab-5 .nt-heavy {
 	display: block;
 }
 
