@@ -15,10 +15,6 @@ The native-transitions-tabs package depends on FlowRouter, making use of the rea
 
 ```meteor add kadira:flow-router```
 
-It also needs to render a placeholder template on a route (explained below). For this I reccomend using BlazeLayout
-
-```meteor add kadira:blaze-layout```
-
 You could roll your own styles in theory, but it is highly reccomened that you add the `jamielob:native-transitions-stylus` package to your project if you haven't already.
 
 ```meteor add jamielob:native-transitions-stylus```
@@ -36,33 +32,20 @@ You need to designate a single route in your app to handle all of the tabs.  Thi
 	FlowRouter.route('/', {
       name: 'tabs',
       action: function() {
-        if (!FlowRouter.getQueryParam('nt-tab')) FlowRouter.setQueryParams({'nt-tab': 1 });
         BlazeLayout.render('ntPlaceholder');
       }
     });
 ```
 
-The route itself and name can be anything you like, but just make sure that it renders the `ntPlaceholder` template which is provided by this package.  To pick which tab container is displayed first change the tab number that is set by FlowRouter in the snippet above.
+The route itself and name can be anything you like, but just make sure that it renders the `ntPlaceholder` template which is provided by this package.
 
-In the <body> of your app use the `{{>ntTabs}}` template to set up the templates you want to use for the tabs and pages.
-
-```
-	{{>ntTabs tabs="tabs" tab1="tab1" tab2="tab2" tab3="tab3" tab4="tab4"}}
-```
-
-`tabs` refers to the name of the template containing the tab buttons themselves.
+In the <body> of your app place the templates and tabs that you want to make up the core pages
 
 Each of the tab pages should be wrapped in a div with classes of `nt-tab-container` and the tab number formatted as `nt-tab-x`.
 
-```
-	<div class="nt-tab-container nt-tab-1">
-		...
-	</div>
-```
+```<div class="nt-tab-container nt-tab-1">```
 
-
-
-
+To pick with container is displayed first add the `.nt-tab-container-current` class to it.
 
 Next add the tabs themselves.  Tabs are simply anchor tags wrapped in a div with a class of `.nt-tabs-fixed`.  Each anchor tag should have a href that links to whichever route you have set up as the placeholder route plus a query param called `nt-tab` containing the tab number. 
 
@@ -94,15 +77,8 @@ Next add the tabs themselves.  Tabs are simply anchor tags wrapped in a div with
 
 Tabs stay visible at the bottom of every page by default
 
-If you have a page that you don't want the tabs to appear on then simply add `.nt-no-tabs` on the `.nt-container` div.
-
-```
-	<div class="nt-tab-container nt-no-tabs">
-		...
-	</div>
-```
-
-This does three things.  First it increases the z-index above the tabs essentially hiding them, second it reduces the pixelsOffsetBottom to zero when entering the page and third it makes sure any links on that page set the pixelOffsetBottom of the native transitions package back to 0 too.  Magic!
+If you have a page that you don't want the tabs to appear on then simply add
+.nt-no-tabs on .nt-container div
 
 
 ##Tab height
