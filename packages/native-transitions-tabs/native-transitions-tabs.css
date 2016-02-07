@@ -35,6 +35,6 @@
 }
 
 /* Fixes z-index problem with scrolling items underneath */
-.nt-tabs-hidden .nt-scroll {
+.nt-tab-undefined .nt-scroll {
 	overflow: hidden;
 }

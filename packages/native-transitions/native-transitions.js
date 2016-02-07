@@ -15,7 +15,7 @@ if (Meteor.isCordova) {
 	nt.defaults.backDirection = 'right';
 
 	//Default transition duration
-	nt.defaults.duration = 550;
+	nt.defaults.duration = 350;
 
 	//Default delays
 	nt.defaults.iosdelay = 0;
@@ -103,7 +103,9 @@ nt.transition = function(completed) {
 			window.plugins.nativepagetransitions[nt.type](
 				options,
 				//Check for completed callback
-				function () { if (completed) completed(); },
+				function () { 
+					if (completed) completed(); 
+				},
 				//Check for error
 				function (error) { if (error) console.log('Native Transitions Error:' + error) },
 			);	
