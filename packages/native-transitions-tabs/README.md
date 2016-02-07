@@ -118,3 +118,20 @@ What this does is hide the heavy content for a split second, makes the switch to
 ```
 
 On Android and older iOS devices this will be required quicker, so be sure to test on real devices.  If in doubt, use the pattern above.
+
+##Helpers and classes
+
+The `nt-tabs-hidden` class is added the the tabs-conainer when they aren't showing.  This is used internally to disable scrolling in the underlying .nt-scroll when they aren't be shown to fix a z-index bug on mobile that allows the scrolling of a hidden div.
+
+You can check if the tabs are hidden using the provided global helper:
+```
+	{{#if ntTabsHidden}}
+		...
+	{{/if}}
+```
+
+The `nt-tabs-x` class is added the the tabs-conainer to show which tab is currently showing. 
+
+You can access this in your template if needed using the `{{ntCurrentTab}}` helper.
+
+As mentioned above you can also check if any heavy content has been loaded using the `{{ntHeavyLoaded}}` helper.

@@ -33,3 +33,8 @@
 .nt-heavy-tab-5 .nt-tab-5 .nt-heavy {
 	display: block;
 }
+
+/* Fixes z-index problem with scrolling items underneath */
+.nt-tabs-hidden .nt-scroll {
+	overflow: hidden;
+}
