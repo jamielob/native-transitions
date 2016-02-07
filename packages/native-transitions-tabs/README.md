@@ -96,8 +96,15 @@ Next add the tabs themselves.  Tabs are simply anchor tags wrapped in a div with
 
 Tabs stay visible at the bottom of every page by default
 
-If you have a page that you don't want the tabs to appear on then simply add
-.nt-no-tabs on .nt-container div
+If you have a page that you don't want the tabs to appear on then simply add `.nt-no-tabs` on the `.nt-container` div.
+
+```
+	<div class="nt-tab-container nt-no-tabs">
+		...
+	</div>
+```
+
+This does three things.  First it increases the z-index above the tabs essentially hiding them, second it reduces the pixelsOffsetBottom to zero when entering the page and third it makes sure any links on that page set the pixelOffsetBottom of the native transitions package back to 0 too.  Magic!
 
 
 ##Tab height
