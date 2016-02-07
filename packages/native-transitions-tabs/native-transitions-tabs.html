@@ -1,34 +1,3 @@
 <template name="ntPlaceholder">
 
 </template>
-
-
-<template name="ntTabs">
-
-	<div class="{{ntCurrentTab}} {{ntHeavyLoaded}} {{ntTabsHidden}}">
-		
-		{{#if tab1}}
-			{{> Template.dynamic template=tab1}}
-		{{/if}}
-
-		{{#if tab2}}
-			{{> Template.dynamic template=tab2}}
-		{{/if}}
-
-		{{#if tab3}}
-			{{> Template.dynamic template=tab3}}
-		{{/if}}
-
-		{{#if tab4}}
-			{{> Template.dynamic template=tab4}}
-		{{/if}}
-
-		{{#if tab5}}
-			{{> Template.dynamic template=tab5}}
-		{{/if}}
-
-	</div>
-
-	{{> Template.dynamic template=tabs}}
-
-</template>
