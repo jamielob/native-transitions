@@ -1,30 +1,17 @@
-.nt-tabs-container {
+.nt-tab-container {
 	position: absolute;
 	top: 0; 
 	right: 0;
 	bottom: 0;
 	left: 0;
 	background-color: #FFF;
-	max-width: 100%; 
-    overflow: hidden;
-}
-.nt-tab-container {
-	position: relative;
-	height: 100%;
-	width: 100%;
-	top: 0; 
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background-color: #FFF;
-	/*display: none;*/
+	display: none;
 }
 
-/*.nt-tab1 .nt-tab1,
+.nt-tab1 .nt-tab1,
 .nt-tab2 .nt-tab2,
 .nt-tab3 .nt-tab3,
 .nt-tab4 .nt-tab4,
 .nt-tab5 .nt-tab5 {
 	display: block;
 }
-*/
