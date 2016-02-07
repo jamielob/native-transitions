@@ -15,6 +15,10 @@ The native-transitions-tabs package depends on FlowRouter, making use of the rea
 
 ```meteor add kadira:flow-router```
 
+It also needs to render a placeholder template on a route (explained below). For this I reccomend using BlazeLayout
+
+```meteor add kadira:blaze-layout```
+
 You could roll your own styles in theory, but it is highly reccomened that you add the `jamielob:native-transitions-stylus` package to your project if you haven't already.
 
 ```meteor add jamielob:native-transitions-stylus```
@@ -39,13 +43,28 @@ You need to designate a single route in your app to handle all of the tabs.  Thi
 
 The route itself and name can be anything you like, but just make sure that it renders the `ntPlaceholder` template which is provided by this package.
 
-In the <body> of your app place the templates and tabs that you want to make up the core pages
+In the <body> of your app use the `{{>ntTabs}}` template to set up the templates you want to use for the tabs and pages.
+
+```
+	{{>ntTabs tabs="tabs" tab1="tab1" tab2="tab2" tab3="tab3" tab4="tab4"}}
+```
+
+`tabs` refers to the name of the template containing the tab buttons themselves.
 
 Each of the tab pages should be wrapped in a div with classes of `nt-tab-container` and the tab number formatted as `nt-tab-x`.
 
-```<div class="nt-tab-container nt-tab-1">```
+```
+	<div class="nt-tab-container nt-tab-1">
+		...
+	</div>
+```
 
 To pick with container is displayed first add the `.nt-tab-container-current` class to it.
+
+```<div class="nt-tab-container nt-tab-container-current nt-tab-1">
+		...
+	</div>
+```
 
 Next add the tabs themselves.  Tabs are simply anchor tags wrapped in a div with a class of `.nt-tabs-fixed`.  Each anchor tag should have a href that links to whichever route you have set up as the placeholder route plus a query param called `nt-tab` containing the tab number. 
 
