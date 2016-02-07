@@ -39,7 +39,7 @@ if (Meteor.isCordova) {
 		
 		document.addEventListener("backbutton", function() {
 			//Set the direction to the default back direction
-			nt.direction = nt.defaults.direction
+			nt.direction = nt.defaults.backDirection;
 			//Navigate back
 			window.history.back();
 		}, false);

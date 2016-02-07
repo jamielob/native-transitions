@@ -20,6 +20,11 @@ autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
 kadira:flow-router
 kadira:blaze-layout
+
 jamielob:native-transitions
+jamielob:native-transitions-stylus
+jamielob:native-transitions-tabs
+
+pagebakers:ionicons	
 reactive-var
 stylus

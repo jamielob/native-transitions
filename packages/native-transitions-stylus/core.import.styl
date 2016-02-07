@@ -1,5 +1,5 @@
 //STATUS BAR
-.fui-status-bar
+.nt-status-bar
 		position absolute
 		top 0
 		display block
@@ -11,7 +11,7 @@
 		display none //hiding this for now since it makes it easier for cross ios/android dev
 
 //CONTAINER
-.fui-container
+.nt-container
 	margin-top $statusBarHeight
 	margin 0 //hiding this for now since it makes it easier for cross ios/android dev
 	position absolute
@@ -21,6 +21,9 @@
 	left 0
 	background-color #FFF
 	z-index 6
+	
+	&.nt-no-tabs
+		z-index 8
 
 
 //LINKS
@@ -51,25 +54,25 @@ h6
 p
 	padding-bottom $verticalSpacing
 	
-	&.fui-small
+	&.nt-small
 		font-size $fontSize * $smallMultiplier
 		
-	&.fui-large
+	&.nt-large
 		font-size $fontSize * $largeMultiplier
 
-.fui-text-center
+.nt-text-center
 	text-align center !important
 	
-.fui-text-left
+.nt-text-left
 	text-align left !important
 	
-.fui-text-right
+.nt-text-right
 	text-align right !important
 
 
 
 //Utility
-.fui-no-flicker
+.nt-no-flicker
 	-webkit-backface-visibility hidden
 	backface-visibility hidden
 	-webkit-perspective 1000
@@ -78,12 +81,12 @@ p
 
 //Add the drop shadow 
 
-// .fui-content
+// .nt-content
 // 	-webkit-box-shadow 0px 0px 10px 0px rgba(0,0,0,0.1)
 // 	box-shadow 0px 0px 10px 0px rgba(0,0,0,0.1)
 
 //Buttons
-.fui-button
+.nt-button
 	position relative
 	display inline-block
 	padding-top $buttonPaddingVertical - 1px
@@ -98,21 +101,21 @@ p
 	vertical-align middle
 	border-radius($borderRadius)
 	
-	&.fui-large
+	&.nt-large
 		font-size $fontSize * $largeMultiplier
 		padding-top $buttonPaddingVertical * $largeMultiplier - 1px
 		padding-bottom $buttonPaddingVertical * $largeMultiplier + 1px
 	
-	&.fui-small
+	&.nt-small
 		font-size $fontSize * $smallMultiplier
 		padding-top $buttonPaddingVertical * $smallMultiplier - 1px
 		padding-bottom $buttonPaddingVertical * $smallMultiplier + 1px
 
-	&.fui-block
+	&.nt-block
 		display block
 		width 100%
 	
-	&.fui-solid
+	&.nt-solid
 		background-color $buttonBackgroundColor
 		color $buttonColor
 		border none
@@ -120,44 +123,44 @@ p
 	&:active	
 		border-color darken($buttonBorderColor, 30%)
 		
-	&.fui-solid:active
+	&.nt-solid:active
 		background-color darken($buttonBackgroundColor, 30%)
 		
 
 
 //PADDING
-.fui-padding 
+.nt-padding 
 	padding $padding
 	
-	&.fui-small
+	&.nt-small
 		padding-top $padding * $smallMultiplier
 		padding-bottom $padding * $smallMultiplier
 	
-	&.fui-large
+	&.nt-large
 		padding-top $padding * $largeMultiplier
 		padding-bottom $padding * $largeMultiplier
 
 
 //BORDERS
 
-.fui-border
+.nt-border
 	border 1px solid $colorBorder
 	
-.fui-border-top
+.nt-border-top
 	border-top 1px solid $colorBorder
 	
-.fui-border-right
+.nt-border-right
 	border-right 1px solid $colorBorder
 
-.fui-border-bottom
+.nt-border-bottom
 	border-bottom 1px solid $colorBorder
 	
-.fui-border-left
+.nt-border-left
 	border-left 1px solid $colorBorder
 
 
 //HEADER
-.fui-header
+.nt-header
 	position absolute
 	top 0
 	width 100%
@@ -178,7 +181,7 @@ p
 		overflow hidden
 		text-overflow ellipsis
 
-	.fui-button 
+	.nt-button 
 		position absolute
 		left 0
 		top 0
@@ -197,7 +200,7 @@ p
 			// transform translateY(-50%)
 			// margin-top -2px
 				
-		&.fui-text
+		&.nt-text
 			font-size 0.7em
 			width auto
 			padding 0 10px
@@ -206,11 +209,11 @@ p
 			height auto
 			line-height $headerHeight - 9px
 	
-		&.fui-right
+		&.nt-right
 			right 0
 			left auto
 		
-		&.fui-block
+		&.nt-block
 			top 0
 			width 100%
 			height 100%
@@ -223,8 +226,8 @@ p
 			background-color darken($headerBackgroundColor, 30%)
 		
 //SUBHEADER
-.fui-subheader
-	@extend .fui-header
+.nt-subheader
+	@extend .nt-header
 	top $headerHeight
 	height $subheaderHeight
 	background-color $subheaderBackgroundColor
@@ -232,31 +235,31 @@ p
 	padding-top 0
 	z-index 2
 	
-	.fui-button
-		&.fui-block
+	.nt-button
+		&.nt-block
 			line-height $subheaderHeight - 2px
 			
-			&.fui-icon-right i:last-child
+			&.nt-icon-right i:last-child
 				right 22px
 	
 
 //FOOTER
-.fui-footer
-	@extend .fui-header
+.nt-footer
+	@extend .nt-header
 	top auto
 	bottom 0
 	height $footerHeight
 	background-color $footerBackgroundColor
 	color $footerColor
 	
-	.fui-button
-		&.fui-block
+	.nt-button
+		&.nt-block
 			line-height $footerHeight - 2px
 		
 		
 			
 //SCROLLING CONTENT
-.fui-scroll
+.nt-scroll
 	overflow-x hidden
 	overflow-y scroll
 	-webkit-overflow-scrolling touch
@@ -266,9 +269,9 @@ p
 	left 0
 	position absolute
 	z-index 1
-	background-color $fuiScrollBackgroundColor
+	background-color $ntScrollBackgroundColor
 	
-.fui-element .fui-scroll
+.nt-element .nt-scroll
 	overflow-x hidden
 	overflow-y scroll
 	-webkit-overflow-scrolling touch
@@ -279,45 +282,45 @@ p
 	position relative
 	z-index 1
 
-	&.fui-padding
+	&.nt-padding
 		padding-top $padding
 		
 
 
 
-//Adjust fui-scroll for different elements
-.fui-scroll.fui-no-header
+//Adjust nt-scroll for different elements
+.nt-scroll.nt-no-header
 	top 0
 	
-.fui-scroll.fui-has-subheader
+.nt-scroll.nt-has-subheader
 	top $headerHeight + $subheaderHeight
 
-[fui-tabs] .fui-scroll,
-.fui-scroll.fui-has-tabs
+[nt-tabs] .nt-scroll,
+.nt-scroll.nt-has-tabs
 	bottom $tabsHeight
 	
-.fui-scroll.fui-has-footer
+.nt-scroll.nt-has-footer
 	bottom $footerHeight
 	
-[fui-tabs] .fui-slideUp .fui-element
+[nt-tabs] .nt-slideUp .nt-element
 	bottom $tabsHeight
 	
 		
 
 //Fixes z-index problem with scrolling items underneath in fast-ui and fast-ui-swipe
-.fui-last .fui-scroll
+.nt-last .nt-scroll
 	//overflow: hidden  //Was causing a flicker so disabled.  Doesn't seem to be a problem anymore.
 
 
 //DIVIDER
-.fui-divider
+.nt-divider
 	background-color $dividerBackgroundColor
 	color $dividerColor
 	height $dividerHeight
 	width 100%
 
 //ITEM HEADER
-.fui-item-header
+.nt-item-header
 	display block
 	background-color $itemHeaderBackgroundColor
 	color $itemHeaderColor
@@ -330,7 +333,7 @@ p
 
 
 //ITEM
-.fui-item
+.nt-item
 	position relative
 	display block
 	border-bottom $colorGreyLight 1px solid
@@ -355,11 +358,11 @@ p
 	p:last-child
 		padding-bottom 0
 		
-	&.fui-small
+	&.nt-small
 		padding-top: $padding * $smallMultiplier	
 		padding-bottom: $padding * $smallMultiplier	
 		
-	.fui-stamp
+	.nt-stamp
 		position absolute
 		top $padding
 		right $padding
@@ -368,7 +371,7 @@ p
 
 
 //ICONS
-.fui-icon-right
+.nt-icon-right
 	padding-right 50px
 	
 	i:last-child
@@ -380,7 +383,7 @@ p
 		width 15px
 		text-align center
 		
-.fui-icon-left
+.nt-icon-left
 	padding-left 50px
 	
 	i:first-child
@@ -394,26 +397,26 @@ p
 		
 
 //AVATARS
-.fui-avatar
+.nt-avatar
 	border-radius(2px)
 	width $avatarSize
 	height $avatarSize
 	display inline-block
 	
-.fui-avatar-right
+.nt-avatar-right
 	padding-right $avatarSize + $padding + 15px
 	
-	.fui-avatar:last-child
+	.nt-avatar:last-child
 		position absolute
 		right $padding
 		top 50%
 		-webkit-transform translateY(-50%)
 		transform translateY(-50%)
 		
-.fui-avatar-left
+.nt-avatar-left
 	padding-left $avatarSize + $padding + 15px
 	
-	.fui-avatar:first-child
+	.nt-avatar:first-child
 		position absolute
 		left $padding
 		top 50%
@@ -425,7 +428,7 @@ p
 		
 
 //RANKS
-.fui-rank
+.nt-rank
 	border-radius(2px)
 	width $rankSize
 	height $rankSize
@@ -437,7 +440,7 @@ p
 	padding-right 0.5px
 	line-height $avatarSize - 3px
 	
-	&.fui-small
+	&.nt-small
 		width $rankSize * $smallMultiplier
 		height $rankSize * $smallMultiplier
 		line-height $avatarSize * $smallMultiplier - 1px
@@ -448,33 +451,33 @@ p
 			display block
 			top 2px
 	
-.fui-rank-right
+.nt-rank-right
 	padding-right $rankSize + $padding + 15px
 	
-	.fui-rank:last-child
+	.nt-rank:last-child
 		position absolute
 		right $padding
 		top 50%
 		-webkit-transform translateY(-50%)
 		transform translateY(-50%)
 		
-	&.fui-small
+	&.nt-small
 		padding-right ($rankSize * $smallMultiplier) + $padding + 15px
 		
 		h2
 			padding-top 2px
 		
-.fui-rank-left
+.nt-rank-left
 	padding-left $rankSize + $padding + 15px
 	
-	.fui-rank:first-child
+	.nt-rank:first-child
 		position absolute
 		left $padding
 		top 50%
 		-webkit-transform translateY(-50%)
 		transform translateY(-50%)
 		
-	&.fui-small
+	&.nt-small
 		padding-left ($rankSize * $smallMultiplier) + $padding + 15px
 		
 		h2
@@ -482,7 +485,7 @@ p
 
 
 //ITEM LEFT
-// .fui-avatar-left
+// .nt-avatar-left
 // 	min-height $avatarSize 
 // 	padding-left $avatarSize + 15px
 	
@@ -491,7 +494,7 @@ p
 // 		top 0
 // 		left 0
 		
-// 	&.fui-small
+// 	&.nt-small
 // 		min-height $avatarSize * $smallMultiplier
 // 		padding-left $avatarSize * $smallMultiplier + 15px
 		
@@ -515,7 +518,7 @@ p
 
 //PILLS
 
-.fui-pill
+.nt-pill
 	border-radius(20px)
 	background-color $colorDarkPrimary
 	color $colorTextLight
@@ -526,7 +529,7 @@ p
 		
 
 //Tabs
-.fui-tabs
+.nt-tabs
 	display -webkit-flex
 	display flex
 	-webkit-justify-content space-around
@@ -566,23 +569,24 @@ p
 		line-height 1em
 		margin-top -5px
 	
-	a.fui-active, a:active
+	a.nt-active, a:active
 		color $tabsActiveColor
 		
 	a:last-child
 		border-right 0
 		
-.fui-tabs-divider a
+.nt-tabs-divider a
 	border-right $tabsDividerWidth $tabsDividerStyle $tabsDividerColor
 	
 
-.fui-tabs-fixed
+.nt-tabs-fixed
+	@extends .nt-tabs
 	position absolute
 	bottom 0
 	left 0
 	z-index 7
 	
-.fui-tabs-indicators
+.nt-tabs-indicators
 	height $tabsHeight * 1.3
 	
 	a
@@ -598,7 +602,7 @@ p
 
 //ELEMENTS
 
-.fui-slideDown .fui-element
+.nt-slideDown .nt-element
 	// -webkit-box-shadow 0px 0px 20px 0px rgba(0,0,0,0.1)
 	// box-shadow 0px 0px 20px 0px rgba(0,0,0,0.1)
 	padding-top $headerHeight
@@ -606,7 +610,7 @@ p
 	overflow-y scroll
 	-webkit-overflow-scrolling touch
 
-.fui-modal .fui-element
+.nt-modal .nt-element
 	z-index 6 //Popups should be on top of headers
 	// -webkit-box-shadow 0px 0px 20px 0px rgba(0,0,0,0.1)
 	// box-shadow 0px 0px 20px 0px rgba(0,0,0,0.1)
@@ -614,26 +618,26 @@ p
 	border-radius($borderRadius)
 	
 
-.fui-modal.fui-element-in .fui-overlay
+.nt-modal.nt-element-in .nt-overlay
 	z-index 6 //Popups should be on top of headers
-	-webkit-animation fui-fade-modal-in 0.35s 0s cubic-bezier(0.215, 0.610, 0.355, 1.000) both
-	animation fui-fade-modal-in 0.35s 0s cubic-bezier(0.215, 0.610, 0.355, 1.000) both
+	-webkit-animation nt-fade-modal-in 0.35s 0s cubic-bezier(0.215, 0.610, 0.355, 1.000) both
+	animation nt-fade-modal-in 0.35s 0s cubic-bezier(0.215, 0.610, 0.355, 1.000) both
 	background-color $overlayBackgroundColor
 
-@keyframes fui-fade-modal-in 
+@keyframes nt-fade-modal-in 
 	from  
 		opacity 0
 	to
 		opacity $overlayOpacity
 
 
-.fui-modal.fui-element-out .fui-overlay
+.nt-modal.nt-element-out .nt-overlay
 	display block
-	-webkit-animation fui-fade-out 0.35s 0s cubic-bezier(0.215, 0.610, 0.355, 1.000) both
-	animation fui-fade-out 0.35s 0s cubic-bezier(0.215, 0.610, 0.355, 1.000) both
+	-webkit-animation nt-fade-out 0.35s 0s cubic-bezier(0.215, 0.610, 0.355, 1.000) both
+	animation nt-fade-out 0.35s 0s cubic-bezier(0.215, 0.610, 0.355, 1.000) both
 	
 
-@keyframes fui-fade-out
+@keyframes nt-fade-out
 	from
 		opacity $overlayOpacity
 	to
@@ -645,14 +649,14 @@ p
 
 
 //COMMON
-.fui-button.fui-facebook
-	@extend .fui-button.fui-solid
+.nt-button.nt-facebook
+	@extend .nt-button.nt-solid
 	background-color $colorFacebook
 	
 	&:active	
 		border-color darken($colorFacebook, 30%)
 		
-	&.fui-solid:active
+	&.nt-solid:active
 		background-color darken($colorFacebook, 30%)
 		
 

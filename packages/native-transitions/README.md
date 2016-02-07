@@ -20,3 +20,8 @@ Meteor.startup(function() {
 
 #Speed
 Don't put too much on a single page otherwise the transition will have a delay.
+
+
+#Router
+Although this package does depend on FlowRouter, it's the best one to use with it.
+The native-transitions-tabs package does depend on FlowRouter, making use of the reactive query params
