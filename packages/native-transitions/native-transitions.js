@@ -15,7 +15,7 @@ if (Meteor.isCordova) {
 	nt.defaults.backDirection = 'right';
 
 	//Default transition duration
-	nt.defaults.duration = 350;
+	nt.defaults.duration = 550;
 
 	//Default delays
 	nt.defaults.iosdelay = 0;
@@ -84,8 +84,8 @@ nt.transition = function(completed) {
 			//Only used/needed if native-transitions-tabs is installed
 			//Check for a .nt-no-tabs class and set the fixedPixelsBottom to zero
 			//A simple jquery check works here because the tabs templates don't have .nt-container and only one container is loaded at a time other than that.
-			var noTabs = $('.nt-container').hasClass('nt-no-tabs')
-			if (noTabs) nt.fixedPixelsBottom = 0;
+			// var noTabs = $('.nt-container').hasClass('nt-no-tabs')
+			// if (noTabs) nt.fixedPixelsBottom = 0;
 			
 			//Set up options for this transition
 			var options = {

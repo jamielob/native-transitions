@@ -36,12 +36,13 @@ You need to designate a single route in your app to handle all of the tabs.  Thi
 	FlowRouter.route('/', {
       name: 'tabs',
       action: function() {
+        if (!FlowRouter.getQueryParam('nt-tab')) FlowRouter.setQueryParams({'nt-tab': 1 });
         BlazeLayout.render('ntPlaceholder');
       }
     });
 ```
 
-The route itself and name can be anything you like, but just make sure that it renders the `ntPlaceholder` template which is provided by this package.
+The route itself and name can be anything you like, but just make sure that it renders the `ntPlaceholder` template which is provided by this package.  To pick which tab container is displayed first change the tab number that is set by FlowRouter in the snippet above.
 
 In the <body> of your app use the `{{>ntTabs}}` template to set up the templates you want to use for the tabs and pages.
 
@@ -59,12 +60,9 @@ Each of the tab pages should be wrapped in a div with classes of `nt-tab-contain
 	</div>
 ```
 
-To pick with container is displayed first add the `.nt-tab-container-current` class to it.
 
-```<div class="nt-tab-container nt-tab-container-current nt-tab-1">
-		...
-	</div>
-```
+
+
 
 Next add the tabs themselves.  Tabs are simply anchor tags wrapped in a div with a class of `.nt-tabs-fixed`.  Each anchor tag should have a href that links to whichever route you have set up as the placeholder route plus a query param called `nt-tab` containing the tab number. 
 
