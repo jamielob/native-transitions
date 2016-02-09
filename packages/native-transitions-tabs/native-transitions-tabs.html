@@ -7,38 +7,49 @@
 
 	<div class="{{ntCurrentTab}}">
 		
-		{{#if tab1}}
+		{{#if template1}}
 			<div class="nt-tab-container nt-tab-1">
-				{{> Template.dynamic template=tab1}}
+				{{> Template.dynamic template=template1}}
 			</div>
 		{{/if}}
 
-		{{#if tab2}}
+		{{#if template2}}
 			<div class="nt-tab-container nt-tab-2">
-				{{> Template.dynamic template=tab2}}
+				{{> Template.dynamic template=template2}}
 			</div>
 		{{/if}}
 
-		{{#if tab3}}
+		{{#if template3}}
 			<div class="nt-tab-container nt-tab-3">
-				{{> Template.dynamic template=tab3}}
+				{{> Template.dynamic template=template3}}
 			</div>
 		{{/if}}
 
-		{{#if tab4}}
+		{{#if template4}}
 			<div class="nt-tab-container nt-tab-4">
-				{{> Template.dynamic template=tab4}}
+				{{> Template.dynamic template=template4}}
 			</div>
 		{{/if}}
 
-		{{#if tab5}}
-			<div class="nt-tab-container nt-tab-4">
-				{{> Template.dynamic template=tab5}}
+		{{#if template5}}
+			<div class="nt-tab-container nt-tab-5">
+				{{> Template.dynamic template=template5}}
 			</div>
 		{{/if}}
 
 	</div>
 
-	{{> Template.dynamic template=tabs}}
+
+	<div class="nt-tabs-fixed {{ntCurrentTab}}">
+		{{> Template.contentBlock}}
+	</div>
+
+</template>
+
+<template name="ntTab">
+
+	<a href="/?nt-tab={{position}}">
+		{{> Template.contentBlock}}
+	</a>
 
 </template>

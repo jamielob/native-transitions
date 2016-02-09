@@ -4,7 +4,31 @@
 
 <body>
 		
-	{{>ntTabs tabs="tabs" tab1="tab1" tab2="tab2" tab3="tab3" tab4="tab4"}}
+	{{#ntTabs template1="tab1" template2="tab2" template3="tab3" template4="tab4"}}
+
+		{{#ntTab position="1"}}
+			<i class="ion-ios-home"></i>
+			Tab 1
+		{{/ntTab}}
+
+		{{#ntTab position="2"}}
+			<i class="ion-ios-home"></i>
+			Tab 2
+		{{/ntTab}}
+
+		{{#ntTab position="3"}}
+			<i class="ion-ios-home"></i>
+			Tab 3
+		{{/ntTab}}
+
+		{{#ntTab position="4"}}
+			<i class="ion-ios-home"></i>
+			Tab 4
+		{{/ntTab}}
+
+	{{/ntTabs}}
+
+
 
 </body>
 
