@@ -1,5 +1,8 @@
+#Native Transitions Components
+Components for use with the `native-transitions` and `native-transitions-stylus` packages.
+
 ##ntBackButton
-A handy header bar back button component that uses the Ionicons package
+A back button component that uses the Ionicons package
 
 ```
 	meteor add pagebakers:ionicons
