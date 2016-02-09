@@ -3,7 +3,7 @@ Tabbed core pages that remember scroll position and content
 
 ```meteor add jamielob:native-transitions-tabs```
 
-You can have up to 5 tabs.
+The readme below is pretty comprehensive, but it's really simple to get this working.  I've provided a demo repo that you can use for setup reference too.
 
 ##Dependencies
 
@@ -19,7 +19,7 @@ It also needs to render a placeholder template on a route (explained below). For
 
 ```meteor add kadira:blaze-layout```
 
-You could roll your own styles in theory, but it is highly reccomened that you add the `jamielob:native-transitions-stylus` package to your project if you haven't already.
+You could roll your own styles in theory, but it is reccomended that you add the `jamielob:native-transitions-stylus` package to your project if you haven't already.
 
 ```meteor add jamielob:native-transitions-stylus```
 
@@ -30,7 +30,7 @@ If you want the tab icons that I've included in the examples below to work (opti
 
 ##Setup
 
-You need to designate a single route in your app to handle all of the tabs.  This is so the native transitions can work, without losing our scroll position or destroying the content on the tabs.   Add the following to your router.
+Designate a single route in your app to handle all of the tabs.  This is so the native transitions can work, without losing our scroll position or destroying the content on the tabs.   Add the following to your router.
 
 ```
 	FlowRouter.route('/', {
@@ -44,50 +44,43 @@ You need to designate a single route in your app to handle all of the tabs.  Thi
 
 The route itself and name can be anything you like, but just make sure that it renders the `ntPlaceholder` template which is provided by this package.  To pick which tab container is displayed first change the tab number that is set by FlowRouter in the snippet above.
 
-In the <body> of your app use the `{{>ntTabs}}` template to set up the templates you want to use for the tabs and pages.
+In the <body> of your app use the following to set up the templates you want to use for the tabs and pages, as well as the buttons along the bottom.  You can have up to 5 tabs.
 
 ```
-	{{>ntTabs tabs="tabs" tab1="tab1" tab2="tab2" tab3="tab3" tab4="tab4"}}
+	{{#ntTabs template1="tab1" template2="tab2" template3="tab3" template4="tab4"}}
+
+		{{#ntTab position="1"}}
+			<i class="ion-ios-home"></i>
+			Tab 1
+		{{/ntTab}}
+
+		{{#ntTab position="2"}}
+			<i class="ion-ios-email"></i>
+			Tab 2
+		{{/ntTab}}
+
+		{{#ntTab position="3"}}
+			<i class="ion-heart"></i>
+			Tab 3
+		{{/ntTab}}
+
+		{{#ntTab position="4"}}
+			<i class="ion-ios-person"></i>
+			Tab 4
+		{{/ntTab}}
+
+	{{/ntTabs}}
+
 ```
 
-`tabs` refers to the name of the template containing the tab buttons themselves.
-
-Each of the tab pages should be wrapped in a div with classes of `nt-tab-container` and the tab number formatted as `nt-tab-x`.
+Each of the tab pages should be wrapped in a div with classes of `nt-container` just like any other native-transitions page.
 
 ```
-	<div class="nt-tab-container nt-tab-1">
+	<div class="nt-container">
 		...
 	</div>
 ```
 
-
-
-
-
-Next add the tabs themselves.  Tabs are simply anchor tags wrapped in a div with a class of `.nt-tabs-fixed`.  Each anchor tag should have a href that links to whichever route you have set up as the placeholder route plus a query param called `nt-tab` containing the tab number. 
-
-```
-	<div class="nt-tabs-fixed">
-		
-	    <a href="/?nt-tab=1">
-			<i class="ion-ios-home"></i>
-			Tab 1
-		</a>
-		<a href="/?nt-tab=2">
-			<i class="ion-ios-more"></i>
-			Tab 2
-		</a>
-		<a href="/?nt-tab=3">
-			<i class="ion-ios-people"></i>
-			Tab 3
-		</a>
-		<a href="/?nt-tab=4">
-			<i class="ion-ios-person"></i>
-			Tab 4
-		</a>
-	   
-	</div>
-```
 
 
 ##Pages without tabs
@@ -107,55 +100,22 @@ This does three things.  First it increases the z-index above the tabs essential
 
 ##Tab height
 
-Tabs height is set to 50px by default to match the css in the native-transitions-stylus package
-If you change the height of the tabs, you'll also need to change the fixedPixelsBottom setting to match.
+Tabs height is set to 50px by default to match the css in the `native-transitions-stylus` package
+If you change the height of the tabs, you'll also need to change the `fixedPixelsBottom` setting to match.
 
-In your lib directory or similar create a file called nt-settings.js and include the following in it
+In your lib directory or similar create a file called `nt-settings.js` or similar and include the following in it
 
+```
 if (Meteor.isCordova) {
 	nt.defaults.fixedPixelsBottom = 60;  //This number should equal the height of your tabs in px
 }
-
-##Slow content heavy pages
-
-If you find that your tab page is slow (e.g. you have long lists) then you can the `.nt-heavy` class to the heavy content.  It is recommended to add this to a container around all of the heavy content, leaving the header/title. 
-
-For example:
-
-```
-	<div class="nt-scroll nt-heavy">
-
-		{{#each list}}
-			<!-- Loads of content! -->
-		{{/each}}
-
-	</div>
-
-``` 
-
-What this does is hide the heavy content for a split second, makes the switch to the page, and then reveals it.  This means that the transition to the page is instant and it takes as long as needed to load the content.   If you would like to show a spinner or similar while the content is loading you can use the `{{ntHeavyLoaded}}` helper.
-
-```
-	{{#unless ntHeavyLoaded}}
-		{{>ntLoading}}
-	{{/unless}}
 ```
 
-On Android and older iOS devices this will be required quicker, so be sure to test on real devices.  If in doubt, use the pattern above.
 
 ##Helpers and classes
 
-The `nt-tabs-hidden` class is added the the tabs-conainer when they aren't showing.  This is used internally to disable scrolling in the underlying .nt-scroll when they aren't be shown to fix a z-index bug on mobile that allows the scrolling of a hidden div.
+The `.nt-tabs-undefined` class is added the the tabs-conainer when they aren't showing.  This is used internally to disable scrolling in the underlying `.nt-scroll` when they aren't being shown to fix a z-index bug on mobile that allows the scrolling of a hidden div.
 
-You can check if the tabs are hidden using the provided global helper:
-```
-	{{#if ntTabsHidden}}
-		...
-	{{/if}}
-```
-
-The `nt-tabs-x` class is added the the tabs-conainer to show which tab is currently showing. 
+The `nt-tabs-x` class is added the the tabs-conainer to show which tab is currently showing where `x` is the tab number. 
 
 You can access this in your template if needed using the `{{ntCurrentTab}}` helper.
-
-As mentioned above you can also check if any heavy content has been loaded using the `{{ntHeavyLoaded}}` helper.
