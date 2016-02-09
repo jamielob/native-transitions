@@ -1,7 +1,7 @@
 /* Containers are hidden and show using pure CSS and a single Session variable as it is much quicker than jQuery hide/show */
 
 /* Container for tab pages - basically the same at nt-container but hidded by default */
-.nt-tab-container {
+/*.nt-tab-container {
 	position: absolute;
 	top: 0; 
 	right: 0;
@@ -9,14 +9,19 @@
 	left: 0;
 	background-color: #FFF;
 	display: none;
+}*/
+
+/* Hide tabs by default */
+.nt-tab-container {
+	display: none;
 }
 
 /* Show the current tab */
-.nt-tab-1 .nt-tab-1,
-.nt-tab-2 .nt-tab-2,
-.nt-tab-3 .nt-tab-3,
-.nt-tab-4 .nt-tab-4,
-.nt-tab-5 .nt-tab-5 {
+.nt-tab-1 .nt-tab-container.nt-tab-1,
+.nt-tab-2 .nt-tab-container.nt-tab-2,
+.nt-tab-3 .nt-tab-container.nt-tab-3,
+.nt-tab-4 .nt-tab-container.nt-tab-4,
+.nt-tab-5 .nt-tab-container.nt-tab-5 {
 	display: block;
 }
 

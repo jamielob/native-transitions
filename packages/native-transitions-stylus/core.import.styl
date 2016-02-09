@@ -42,6 +42,10 @@ h6
 p
 	padding-bottom $verticalSpacing
 	
+	a
+		vertical-align top
+		color $linkColor
+	
 	&.nt-small
 		font-size $fontSize * $smallMultiplier
 		
@@ -56,7 +60,15 @@ p
 	
 .nt-text-right
 	text-align right !important
+	
+a
+	cursor pointer
 
+ul
+	margin 0
+	padding-left $padding + 5px
+	padding-bottom $padding
+	padding-top $padding
 
 
 //Utility
@@ -87,6 +99,7 @@ p
 	border-color $buttonBorderColor
 	border-style $buttonBorderStyle
 	vertical-align middle
+	cursor pointer
 	border-radius($borderRadius)
 	
 	&.nt-large
@@ -127,7 +140,7 @@ p
 	&.nt-large
 		padding-top $padding * $largeMultiplier
 		padding-bottom $padding * $largeMultiplier
-
+	
 
 //BORDERS
 
@@ -315,11 +328,17 @@ p
 	//overflow: hidden  //Was causing a flicker so disabled.  Doesn't seem to be a problem anymore.
 
 
+//HR
+hr 
+	border-top 1px solid $colorGreyLight
+	padding 0
+	margin $padding 0
+
 //DIVIDER
 .nt-divider
 	background-color $dividerBackgroundColor
 	color $dividerColor
-	height $dividerHeight
+	height $dividerColorerHeight
 	width 100%
 
 //ITEM HEADER
@@ -377,10 +396,22 @@ p
 .nt-icon-right
 	padding-right 50px
 	
+	&.nt-small
+		padding-right 46px
+		
+		i:last-child
+			right $padding - 5px
+		
+	&.nt-large
+		padding-right 53px
+		
+		i:last-child
+			right $padding + 4px
+		
 	i:last-child
 		position absolute
 		right $padding
-		top 50%
+		top 46%
 		-webkit-transform translateY(-50%)
 		transform translateY(-50%)
 		width 15px
@@ -389,10 +420,13 @@ p
 .nt-icon-left
 	padding-left 50px
 	
+	&.nt-small
+		padding-left 41px
+	
 	i:first-child
 		position absolute
-		left $padding
-		top 50%
+		left $padding - 5px
+		top 46%
 		-webkit-transform translateY(-50%)
 		transform translateY(-50%)
 		width 15px

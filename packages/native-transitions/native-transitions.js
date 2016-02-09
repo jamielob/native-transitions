@@ -89,13 +89,16 @@ if (Meteor.isCordova) {
 
 
 nt.transition = function(completed) {
+
+	//Notabs check outside of cordova so that they are hidden on desktop also
+	if (nt.noTabs) {
+		nt.fixedPixelsBottom = 0;
+		//Be sure not to hide the tabs on the tab pages themselves (as they are always live)
+		$('.nt-container').not('.nt-tab-container .nt-container').addClass('nt-no-tabs');
+	}
+
 	//Cordova check is inside function so that it isn't undefined on desktop
 	if (Meteor.isCordova) {
-
-		//Get the heavy content
-		//var $heavyContent = $('.nt-heavy');
-		//Hide it
-		//$heavyContent.hide();
 	
 		//Needs to be defered to give time for the click handlers to override any vars
 		Meteor.defer(function() {
@@ -113,14 +116,6 @@ nt.transition = function(completed) {
 			if (nt.noHeader) {
 				nt.fixedPixelsTop = 0;
 				$('.nt-container').addClass('nt-no-header');
-			}
-
-
-			//Only needed if native-transitions-tabs is installed
-			//Check if noTabs flag is set
-			if (nt.noTabs) {
-				nt.fixedPixelsBottom = 0;
-				$('.nt-container').addClass('nt-no-tabs');
 			}
 
 			//Set up options for this transition
@@ -146,8 +141,6 @@ nt.transition = function(completed) {
 						//Fade in the header content
 						$headerContent.fadeIn('fast');
 					}
-
-					//$heavyContent.fadeIn('fast');
 
 					//Check for completed callback
 					if (nt.onCompleted) nt.onCompleted(); 

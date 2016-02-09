@@ -24,8 +24,10 @@ kadira:blaze-layout
 jamielob:native-transitions
 jamielob:native-transitions-stylus
 jamielob:native-transitions-tabs
+jamielob:native-transitions-header
+jamielob:native-transitions-components
 
 pagebakers:ionicons	
 reactive-var
-stylus
-jamielob:native-transitions-header
+#stylus
+

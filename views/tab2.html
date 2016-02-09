@@ -1,40 +1,24 @@
 <template name="tab2">
-	<div class="nt-tab-container nt-tab-2">
+	<div class="nt-container">
+		
 		<div class="nt-header">
-			<h1>2222222</h1>
+			<h1>Blank Pages</h1>
 		</div>
 
-			<div class="nt-scroll">
-				<div>Just some smaller amount of items here</div>
-				<div>Just some smaller amount of items here</div>
-				<div>Just some smaller amount of items here</div>
-				<div>Just some smaller amount of items here</div>
-				<div>Just some smaller amount of items here</div>
-				<div>Just some smaller amount of items here</div>
-				<div>Just some smaller amount of items here</div>
-				<div>Just some smaller amount of items here</div>
-				<div>Just some smaller amount of items here</div>
-				<div>Just some smaller amount of items here</div>
-				<div>Just some smaller amount of items here</div>
-				<div>Just some smaller amount of items here</div>
-				<a href="/profile" class="nt-button">PROFILE</a>
-				<div>Just some smaller amount of items here</div>
-				<div>Just some smaller amount of items here</div>
-				<div>Just some smaller amount of items here</div>
-				<div>Just some smaller amount of items here</div>
-				<div>Just some smaller amount of items here</div>
-				<div>Just some smaller amount of items here</div>
-				<a href="/item" class="nt-button" nt-direction="up">ITEM</a>
-				<div>Just some smaller amount of items here</div>
-				<div>Just some smaller amount of items here</div>
-				<div>Just some smaller amount of items here</div>
-				<div>Just some smaller amount of items here</div>
-				<div>Just some smaller amount of items here</div>
-				<div>Just some smaller amount of items here</div>
-				<div>Just some smaller amount of items here</div>
-				<div>Just some smaller amount of items here</div>
-				<div>Just some smaller amount of items here</div>
-				<div>Just some smaller amount of items here</div>
-			</div>
+		<div class="nt-scroll nt-has-header">
+
+			{{#each list}}
+
+			    <a class="nt-item nt-icon-left" href="/blank">
+			      <i class="ion-ios-checkmark-empty"></i>
+			      <h2>Example Item {{this}}</h2>
+			      <h3>Example Item tagline</h3>
+			    </a>
+			    
+			{{/each}}
+
+		
+		</div>
+	
 	</div>
 </template>

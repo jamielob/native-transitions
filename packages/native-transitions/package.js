@@ -2,7 +2,7 @@ Package.describe({
   name: 'jamielob:native-transitions',
   version: '0.0.1',
   // Brief, one-line summary of the package.
-  summary: 'Actual native transitions for your Meteor app.  The fastest transitions possible on iOS and Android',
+  summary: 'Actual native transitions for your Meteor app on iOS and Android',
   // URL to the Git repository containing the source code for this package.
   git: '',
   // By default, Meteor will default to using README.md for documentation.

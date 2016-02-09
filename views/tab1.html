@@ -1,9 +1,25 @@
 <template name="tab1">
-	<div class="nt-tab-container nt-tab-1">
-		<div class="nt-header">
-			<h1>1111111</h1>
-		</div>
-		{{>feed}}
+	<div class="nt-container">
 		
+		<div class="nt-header">
+			<h1>Long Lists</h1>
+		</div>
+
+		<div class="nt-scroll nt-has-header">
+
+			{{#each list}}
+
+			    <a class="nt-item nt-avatar-left nt-icon-right" href="/items">
+			      <img src="http://lorempixel.com/200/200/?{{this}}" class="nt-avatar">
+			      <h2>Example Person {{this}}</h2>
+			      <h3>Example profile tagline</h3>
+			      <i class="ion-ios-arrow-right"></i>
+			    </a>
+			    
+			{{/each}}
+
+		
+		</div>
+	
 	</div>
 </template>
