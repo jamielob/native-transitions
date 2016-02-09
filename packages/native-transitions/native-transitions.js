@@ -118,7 +118,7 @@ nt.transition = function(completed) {
 				$('.nt-container').not('.nt-tab-container .nt-container').addClass('nt-no-header');
 			}
 
-			console.log(nt);
+			// console.log(nt);
 
 			//Set up options for this transition
 			var options = {
