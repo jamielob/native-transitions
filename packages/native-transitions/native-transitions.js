@@ -107,7 +107,7 @@ nt.transition = function(completed) {
 			//Check for the fadeHeader setting
 			if (nt.fadeHeader) {
 				//Get the header content
-				var $headerContent = $('.nt-header').children();
+				var $headerContent = $('.nt-header').not('.nt-tab-container .nt-header').children();
 				//Hide it
 				$headerContent.hide();
 			}
@@ -115,8 +115,10 @@ nt.transition = function(completed) {
 			//Check if noHeader flag is set
 			if (nt.noHeader) {
 				nt.fixedPixelsTop = 0;
-				$('.nt-container').addClass('nt-no-header');
+				$('.nt-container').not('.nt-tab-container .nt-container').addClass('nt-no-header');
 			}
+
+			console.log(nt);
 
 			//Set up options for this transition
 			var options = {
