@@ -11,7 +11,8 @@ Package.describe({
 });
 
 Cordova.depends({
-    'com.telerik.plugins.nativepagetransitions': '0.6.0'
+    // 'com.telerik.plugins.nativepagetransitions': '0.6.0'
+    'com.telerik.plugins.nativepagetransitions': 'https://github.com/Telerik-Verified-Plugins/NativePageTransitions/tarball/7409e2f9a28a069095862d7b1d14d03207acffb9' //Fixes topOffsetPixel adding margin https://github.com/Telerik-Verified-Plugins/NativePageTransitions/tarball/7409e2f9a28a069095862d7b1d14d03207acffb9
 });
 
 Package.onUse(function(api) {
@@ -19,6 +20,7 @@ Package.onUse(function(api) {
   api.use('ecmascript');
   api.use(['templating', 'session', 'jquery'], ['client']);
   api.addFiles('native-transitions.js', 'client');
+  api.addFiles('native-transitions.css', 'client');
 
   api.export("nt");
 

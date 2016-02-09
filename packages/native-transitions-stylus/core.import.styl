@@ -148,6 +148,17 @@ p
 
 
 //HEADER
+
+.nt-header-placeholder
+	position absolute
+	top 0
+	width 100%
+	height $headerHeight
+	background-color $headerBackgroundColor
+	color $headerColor
+	z-index 7
+	overflow hidden
+
 .nt-header
 	position absolute
 	top 0
@@ -155,7 +166,7 @@ p
 	height $headerHeight
 	background-color $headerBackgroundColor
 	color $headerColor
-	z-index 5
+	z-index 7
 	overflow hidden
 	
 	h1 
@@ -212,6 +223,10 @@ p
 			
 		&:active
 			background-color darken($headerBackgroundColor, 30%)
+			
+
+
+
 		
 //SUBHEADER
 .nt-subheader
@@ -251,7 +266,7 @@ p
 	overflow-x hidden
 	overflow-y scroll
 	-webkit-overflow-scrolling touch
-	top $headerHeight
+	top 0
 	right 0
 	bottom 0
 	left 0
@@ -277,8 +292,8 @@ p
 
 
 //Adjust nt-scroll for different elements
-.nt-scroll.nt-no-header
-	top 0
+.nt-scroll.nt-has-header
+	top $headerHeight
 	
 .nt-scroll.nt-has-subheader
 	top $headerHeight + $subheaderHeight
@@ -652,3 +667,5 @@ p
 //ACTIVE CLICKS
 // a:active
 // 	background-color $showClickBackgroundColor
+
+

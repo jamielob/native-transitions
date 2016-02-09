@@ -24,18 +24,32 @@ if (Meteor.isCordova) {
 	//Fixed pixels
 	nt.defaults.fixedPixelsTop = 0;
 	nt.defaults.fixedPixelsBottom = 0;
-	
-	
-	//Set the initial values to the defaults
-	nt.type = nt.defaults.type;
-	nt.direction = nt.defaults.direction;
-	nt.duration = nt.defaults.duration;
-	nt.iosdelay = nt.defaults.iosdelay;
-	nt.androiddelay = nt.defaults.androiddelay;
-	nt.fixedPixelsTop = nt.defaults.fixedPixelsTop;
-	nt.fixedPixelsBottom = nt.defaults.fixedPixelsBottom;
+
+	//Header and tabs flags
+	nt.defaults.noHeader = false;
+	nt.defaults.noTabs = false;
+
+	//Callbacks
+	nt.defaults.onCompleted = null;
+
+	function _ntDefaults() {
+		nt.type = nt.defaults.type;
+		nt.direction = nt.defaults.direction;
+		nt.duration = nt.defaults.duration;
+		nt.iosdelay = nt.defaults.iosdelay;
+		nt.androiddelay = nt.defaults.androiddelay;
+		nt.fixedPixelsTop = nt.defaults.fixedPixelsTop;
+		nt.fixedPixelsBottom = nt.defaults.fixedPixelsBottom;
+		nt.noHeader = nt.defaults.noHeader;
+		nt.noTabs = nt.defaults.noTabs;
+		nt.onCompleted = nt.defaults.onCompleted;
+	}
+		
 
 	Meteor.startup(function() {
+
+		//Set the initial values to the defaults
+		_ntDefaults();
 		
 		document.addEventListener("backbutton", function() {
 			//Set the direction to the default back direction
@@ -77,16 +91,38 @@ if (Meteor.isCordova) {
 nt.transition = function(completed) {
 	//Cordova check is inside function so that it isn't undefined on desktop
 	if (Meteor.isCordova) {
-		
+
+		//Get the heavy content
+		//var $heavyContent = $('.nt-heavy');
+		//Hide it
+		//$heavyContent.hide();
+	
 		//Needs to be defered to give time for the click handlers to override any vars
 		Meteor.defer(function() {
 
-			//Only used/needed if native-transitions-tabs is installed
-			//Check for a .nt-no-tabs class and set the fixedPixelsBottom to zero
-			//A simple jquery check works here because the tabs templates don't have .nt-container and only one container is loaded at a time other than that.
-			// var noTabs = $('.nt-container').hasClass('nt-no-tabs')
-			// if (noTabs) nt.fixedPixelsBottom = 0;
 			
+			//Check for the fadeHeader setting
+			if (nt.fadeHeader) {
+				//Get the header content
+				var $headerContent = $('.nt-header').children();
+				//Hide it
+				$headerContent.hide();
+			}
+
+			//Check if noHeader flag is set
+			if (nt.noHeader) {
+				nt.fixedPixelsTop = 0;
+				$('.nt-container').addClass('nt-no-header');
+			}
+
+
+			//Only needed if native-transitions-tabs is installed
+			//Check if noTabs flag is set
+			if (nt.noTabs) {
+				nt.fixedPixelsBottom = 0;
+				$('.nt-container').addClass('nt-no-tabs');
+			}
+
 			//Set up options for this transition
 			var options = {
 						   "direction"        : nt.direction, // 'left|right|up|down', default 'left' (which is like 'next')
@@ -102,22 +138,26 @@ nt.transition = function(completed) {
 			//Init transition
 			window.plugins.nativepagetransitions[nt.type](
 				options,
-				//Check for completed callback
+				//Completed function
 				function () { 
-					if (completed) completed(); 
+
+					//Check for the fadeHeader setting
+					if (nt.fadeHeader) {
+						//Fade in the header content
+						$headerContent.fadeIn('fast');
+					}
+
+					//$heavyContent.fadeIn('fast');
+
+					//Check for completed callback
+					if (nt.onCompleted) nt.onCompleted(); 
 				},
 				//Check for error
 				function (error) { if (error) console.log('Native Transitions Error:' + error) },
 			);	
 
 			//Reset all to default
-			nt.type = nt.defaults.type;
-			nt.direction = nt.defaults.direction;
-			nt.duration = nt.defaults.duration;
-			nt.iosdelay = nt.defaults.iosdelay;
-			nt.androiddelay = nt.defaults.androiddelay;
-			nt.fixedPixelsTop = nt.defaults.fixedPixelsTop;
-			nt.fixedPixelsBottom = nt.defaults.fixedPixelsBottom;
+			_ntDefaults()
 
 		});
 	}

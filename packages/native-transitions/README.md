@@ -15,6 +15,21 @@ Meteor.startup(function() {
 });
 ```
 
+##Settings file
+
+If you want to change any of the default global settings you can create a settings file wrapped in an isCordova statement.  
+
+
+##Header bar
+If you want your header bar to remain static while the page transitions then you can add the following to your settings file.
+
+```
+	if (Meteor.isCordova) {
+		nt.fadeHeader = true;
+		nt.defaults.fixedPixelsTop = 44;
+	}
+```
+
 ##Completed callback
 
 You can pass a callback function in to nt.transition() and it will be called once the transition is completed.

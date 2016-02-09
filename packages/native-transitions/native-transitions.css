@@ -1,0 +1,25 @@
+.nt-heavy {
+	display: none;
+}
+
+
+/* Show the "heavy" content a split second after we show the page */
+.nt-heavy-tab-1 .nt-heavy,
+.nt-heavy-tab-2 .nt-heavy,
+.nt-heavy-tab-3 .nt-heavy,
+.nt-heavy-tab-4 .nt-heavy,
+.nt-heavy-tab-5 .nt-heavy {
+	-webkit-animation: fadein .2s; 
+    animation: fadein .2s;
+    display: block;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
