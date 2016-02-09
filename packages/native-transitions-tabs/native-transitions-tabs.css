@@ -20,6 +20,14 @@
 	display: block;
 }
 
+
+
+/* Fixes z-index problem with scrolling items underneath */
+.nt-tab-undefined .nt-scroll {
+	overflow: hidden;
+}
+
+
 /* nt-heavy can be added to any "heavy" content on a tab.  It hides content by default so that it doesn't slow down the transitions */
 /*.nt-tab-undefined .nt-heavy {
 	display: none;
@@ -34,7 +42,3 @@
 	display: block;
 }
 */
-/* Fixes z-index problem with scrolling items underneath */
-.nt-tab-undefined .nt-scroll {
-	overflow: hidden;
-}

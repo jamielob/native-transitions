@@ -20,7 +20,6 @@ Package.onUse(function(api) {
   api.use('ecmascript');
   api.use(['templating', 'session', 'jquery'], ['client']);
   api.addFiles('native-transitions.js', 'client');
-  api.addFiles('native-transitions.css', 'client');
 
   api.export("nt");
 
