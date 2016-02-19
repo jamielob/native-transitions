@@ -1,7 +1,5 @@
 //CONTAINER
 .nt-container
-	margin-top $statusBarHeight
-	margin 0 //hiding this for now since it makes it easier for cross ios/android dev
 	position absolute
 	top 0 
 	right 0
@@ -9,6 +7,7 @@
 	left 0
 	background-color #FFF
 	z-index 6
+	overflow hidden
 	
 	&.nt-no-tabs
 		z-index 8
@@ -78,6 +77,16 @@ ul
 	-webkit-perspective 1000
 	perspective 1000
 	-webkit-transform-style preserve-3d
+	
+.nt-background-white
+	background-color #FFF !important
+	
+.nt-background-primary
+	background-color $colorPrimary !important
+
+.nt-background-secondary
+	background-color $colorPrimary !important
+
 
 //Add the drop shadow 
 
@@ -338,7 +347,7 @@ hr
 .nt-divider
 	background-color $dividerBackgroundColor
 	color $dividerColor
-	height $dividerColorerHeight
+	height $dividerHeight
 	width 100%
 
 //ITEM HEADER
@@ -352,6 +361,7 @@ hr
 	padding-left $padding
 	padding-right $padding
 	text-align center
+	line-height $lineHeight
 
 
 //ITEM

@@ -1,50 +1,49 @@
 nt = {};
 
+//Set defaults
+nt.defaults = {};
+	
+//Default transition - options are slide, flip, fade
+nt.defaults.type = 'slide'
+
+//Default transition direction - options are left, right, up, down, depending on the transition type
+nt.defaults.direction = 'left';
+
+//Default back transition direction
+nt.defaults.backDirection = 'right';
+
+//Default transition duration
+nt.defaults.duration = 350;
+
+//Default delays
+nt.defaults.iosdelay = 0;
+nt.defaults.androiddelay = 0;
+
+//Fixed pixels
+nt.defaults.fixedPixelsTop = 0;
+nt.defaults.fixedPixelsBottom = 0;
+
+//Header and tabs flags
+nt.defaults.noHeader = false;
+nt.defaults.noTabs = false;
+
+//Callbacks
+nt.defaults.onCompleted = null;
+
+function _ntDefaults() {
+	nt.type = nt.defaults.type;
+	nt.direction = nt.defaults.direction;
+	nt.duration = nt.defaults.duration;
+	nt.iosdelay = nt.defaults.iosdelay;
+	nt.androiddelay = nt.defaults.androiddelay;
+	nt.fixedPixelsTop = nt.defaults.fixedPixelsTop;
+	nt.fixedPixelsBottom = nt.defaults.fixedPixelsBottom;
+	nt.noHeader = nt.defaults.noHeader;
+	nt.noTabs = nt.defaults.noTabs;
+	nt.onCompleted = nt.defaults.onCompleted;
+}
+	
 if (Meteor.isCordova) {
-
-	//Set defaults
-	nt.defaults = {};
-		
-	//Default transition - options are slide, flip, fade
-	nt.defaults.type = 'slide'
-	
-	//Default transition direction - options are left, right, up, down, depending on the transition type
-	nt.defaults.direction = 'left';
-	
-	//Default back transition direction
-	nt.defaults.backDirection = 'right';
-
-	//Default transition duration
-	nt.defaults.duration = 350;
-
-	//Default delays
-	nt.defaults.iosdelay = 0;
-	nt.defaults.androiddelay = 0;
-
-	//Fixed pixels
-	nt.defaults.fixedPixelsTop = 0;
-	nt.defaults.fixedPixelsBottom = 0;
-
-	//Header and tabs flags
-	nt.defaults.noHeader = false;
-	nt.defaults.noTabs = false;
-
-	//Callbacks
-	nt.defaults.onCompleted = null;
-
-	function _ntDefaults() {
-		nt.type = nt.defaults.type;
-		nt.direction = nt.defaults.direction;
-		nt.duration = nt.defaults.duration;
-		nt.iosdelay = nt.defaults.iosdelay;
-		nt.androiddelay = nt.defaults.androiddelay;
-		nt.fixedPixelsTop = nt.defaults.fixedPixelsTop;
-		nt.fixedPixelsBottom = nt.defaults.fixedPixelsBottom;
-		nt.noHeader = nt.defaults.noHeader;
-		nt.noTabs = nt.defaults.noTabs;
-		nt.onCompleted = nt.defaults.onCompleted;
-	}
-		
 
 	Meteor.startup(function() {
 
@@ -105,12 +104,12 @@ nt.transition = function(completed) {
 
 			
 			//Check for the fadeHeader setting
-			if (nt.fadeHeader) {
-				//Get the header content
-				var $headerContent = $('.nt-header').not('.nt-tab-container .nt-header').children();
-				//Hide it
-				$headerContent.hide();
-			}
+			// if (nt.fadeHeader) {
+			// 	//Get the header content
+			// 	var $headerContent = $('.nt-header').not('.nt-tab-container .nt-header').children();
+			// 	//Hide it
+			// 	$headerContent.hide();
+			// }
 
 			//Check if noHeader flag is set
 			if (nt.noHeader) {
@@ -139,10 +138,10 @@ nt.transition = function(completed) {
 				function () { 
 
 					//Check for the fadeHeader setting
-					if (nt.fadeHeader) {
-						//Fade in the header content
-						$headerContent.fadeIn('fast');
-					}
+					// if (nt.fadeHeader) {
+					// 	//Fade in the header content
+					// 	$headerContent.fadeIn('fast');
+					// }
 
 					//Check for completed callback
 					if (nt.onCompleted) nt.onCompleted(); 

@@ -119,3 +119,7 @@ The `.nt-tabs-undefined` class is added the the tabs-conainer when they aren't s
 The `nt-tabs-x` class is added the the tabs-conainer to show which tab is currently showing where `x` is the tab number. 
 
 You can access this in your template if needed using the `{{ntCurrentTab}}` helper.
+
+##Help! My project went blank!
+
+This usually happens when you've specified a template that doesn't exist.  Check all of your template tabs are pointing to the correct templates in your project.

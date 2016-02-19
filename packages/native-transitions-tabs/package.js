@@ -1,6 +1,6 @@
 Package.describe({
   name: 'jamielob:native-transitions-tabs',
-  version: '0.0.1',
+  version: '1.0.0',
   // Brief, one-line summary of the package.
   summary: 'Tabbed core pages that remember scroll + content',
   // URL to the Git repository containing the source code for this package.
@@ -11,7 +11,7 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('1.3-cordova-beta.2');
+  api.versionsFrom('1.3-beta.11');
   api.use('ecmascript');
   api.use(['templating','jquery','tracker','session'], 'client');
   api.use('kadira:flow-router', 'client');
