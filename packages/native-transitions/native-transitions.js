@@ -30,7 +30,7 @@ nt.defaults.noTabs = false;
 //Callbacks
 nt.defaults.onCompleted = null;
 
-function _ntDefaults() {
+nt.reset = function() {
 	nt.type = nt.defaults.type;
 	nt.direction = nt.defaults.direction;
 	nt.duration = nt.defaults.duration;
@@ -48,7 +48,7 @@ if (Meteor.isCordova) {
 	Meteor.startup(function() {
 
 		//Set the initial values to the defaults
-		_ntDefaults();
+		nt.reset();
 		
 		document.addEventListener("backbutton", function() {
 			//Set the direction to the default back direction
@@ -151,7 +151,7 @@ nt.transition = function(completed) {
 			);	
 
 			//Reset all to default
-			_ntDefaults()
+			nt.reset()
 
 		});
 	}
