@@ -1,6 +1,6 @@
 Package.describe({
   name: 'jamielob:native-transitions',
-  version: '1.0.0',
+  version: '1.1.0',
   // Brief, one-line summary of the package.
   summary: 'Actual native transitions for your Meteor app on iOS and Android',
   // URL to the Git repository containing the source code for this package.
@@ -22,9 +22,10 @@ Cordova.depends({
 Package.onUse(function(api) {
   api.versionsFrom('1.3-beta.11');
   api.use('ecmascript');
-  api.use(['templating', 'session', 'jquery'], ['client']);
+  api.use(['templating', 'jquery'], ['client']);
   api.addFiles('native-transitions.js', 'client');
 
+  //Exposes options and defaults so user can override
   api.export("nt");
 
 });

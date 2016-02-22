@@ -29,7 +29,7 @@
 
 
 /* Fixes z-index problem with scrolling items underneath */
-.nt-tab-undefined .nt-scroll {
+.nt-tab-undefined .nt-content {
 	overflow: hidden;
 }
 

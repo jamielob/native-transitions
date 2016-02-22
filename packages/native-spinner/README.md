@@ -1,0 +1,1 @@
+#A native cordova spinner

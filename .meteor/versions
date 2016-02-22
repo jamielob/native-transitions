@@ -15,6 +15,7 @@ callback-hook@1.0.5-beta.11
 check@1.1.1-beta.11
 coffeescript@1.0.12-beta.11
 cosmos:browserify@0.9.3
+crosswalk@1.4.0-beta.11
 ddp@1.2.2
 ddp-client@1.2.2-beta.11
 ddp-common@1.2.2
@@ -33,7 +34,7 @@ htmljs@1.0.6-beta.11
 http@1.1.2-beta.11
 id-map@1.0.4
 insecure@1.0.4
-jamielob:native-transitions@1.0.0
+jamielob:native-transitions@1.1.0
 jamielob:native-transitions-components@0.0.1
 jamielob:native-transitions-header@1.0.0
 jamielob:native-transitions-stylus@0.5.0

@@ -284,7 +284,7 @@ ul
 		
 			
 //SCROLLING CONTENT
-.nt-scroll
+.nt-content
 	overflow-x hidden
 	overflow-y scroll
 	-webkit-overflow-scrolling touch
@@ -296,7 +296,7 @@ ul
 	z-index 1
 	background-color $ntScrollBackgroundColor
 	
-.nt-element .nt-scroll
+.nt-element .nt-content
 	overflow-x hidden
 	overflow-y scroll
 	-webkit-overflow-scrolling touch
@@ -313,18 +313,18 @@ ul
 
 
 
-//Adjust nt-scroll for different elements
-.nt-scroll.nt-has-header
+//Adjust nt-content for different elements
+.nt-content.nt-has-header
 	top $headerHeight
 	
-.nt-scroll.nt-has-subheader
+.nt-content.nt-has-subheader
 	top $headerHeight + $subheaderHeight
 
-[nt-tabs] .nt-scroll,
-.nt-scroll.nt-has-tabs
+[nt-tabs] .nt-content,
+.nt-content.nt-has-tabs
 	bottom $tabsHeight
 	
-.nt-scroll.nt-has-footer
+.nt-content.nt-has-footer
 	bottom $footerHeight
 	
 [nt-tabs] .nt-slideUp .nt-element
@@ -333,7 +333,7 @@ ul
 		
 
 //Fixes z-index problem with scrolling items underneath in fast-ui and fast-ui-swipe
-.nt-last .nt-scroll
+.nt-last .nt-content
 	//overflow: hidden  //Was causing a flicker so disabled.  Doesn't seem to be a problem anymore.
 
 

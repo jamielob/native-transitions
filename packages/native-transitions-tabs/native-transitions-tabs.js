@@ -1,7 +1,6 @@
 if (Meteor.isCordova) {
 	//Set the fixedPixelBottom to the height of the tabs
 	nt.defaults.fixedPixelsBottom = 50;
-	nt.fixedPixelsBottom = nt.defaults.fixedPixelsBottom;
 
 	//Check for no-tabs clicks
 	$(document)
@@ -13,9 +12,10 @@ if (Meteor.isCordova) {
 
 if (Meteor.isClient) {
 
+	//Set the default tab
 	Session.setDefault('ntCurrentTab', 'nt-tab-1');
 
-	// Watch tab pages changes
+	//Watch tab pages changes
 	Tracker.autorun(function () {
 		//Get the current tab param
 		var tab = FlowRouter.getQueryParam("nt-tab");
@@ -23,11 +23,10 @@ if (Meteor.isClient) {
 		Session.set('ntCurrentTab', 'nt-tab-' + tab);		
 	});
 
-	//Add transition() to empty placeholder - used so that native transitons work when going ot the tabs, which are really just always there in the background
-	Template.ntPlaceholder.onRendered(function() {
-		nt.transition();
-	});
+	//Add transition to empty placeholder - used so that native transitons work when going ot the tabs, which are really just always there in the background
+	Template.ntPlaceholder.transition();
 
+	//Current tab helper
 	Template.registerHelper('ntCurrentTab', function() {
 		return Session.get('ntCurrentTab');
 	});

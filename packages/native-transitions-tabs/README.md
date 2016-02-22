@@ -114,7 +114,7 @@ if (Meteor.isCordova) {
 
 ##Helpers and classes
 
-The `.nt-tabs-undefined` class is added the the tabs-conainer when they aren't showing.  This is used internally to disable scrolling in the underlying `.nt-scroll` when they aren't being shown to fix a z-index bug on mobile that allows the scrolling of a hidden div.
+The `.nt-tabs-undefined` class is added the the tabs-conainer when they aren't showing.  This is used internally to disable scrolling in the underlying `.nt-content` when they aren't being shown to fix a z-index bug on mobile that allows the scrolling of a hidden div.
 
 The `nt-tabs-x` class is added the the tabs-conainer to show which tab is currently showing where `x` is the tab number. 
 
