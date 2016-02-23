@@ -2,6 +2,11 @@
 
 This is a demo repo for the `native transitions for mobile` packages that I'm building for Meteor 1.3.  Everything in here is liable to change without notice so use at your own risk.
 
+The native transitions package is usable on it's own without any of the other packages and is as simple to use as:
+```
+   Template.templateName.transition();
+```
+
 The repo contains several packages:
 
 ##native-transitions
