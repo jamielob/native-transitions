@@ -66,7 +66,6 @@ Template.prototype.transition = function(options) {
 		//Notabs and noheader checks outside of cordova so that they are hidden on desktop also
 		//Check if noTabs flag is set
 		if (nt.noTabs || options.noTabs) {
-			console.log('asdfs');
 			//Set the bottom pixels
 			nt.fixedPixelsBottom = 0;
 			//Be sure not to hide the tabs on the tab pages themselves (as they are always live)
