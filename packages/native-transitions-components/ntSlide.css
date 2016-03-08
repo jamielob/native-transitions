@@ -1,0 +1,77 @@
+.nt-slideDown .nt-element {
+	position: absolute;
+	z-index: 3;
+	top:0;
+	left:0;
+	width: 100%;
+	background-color: #FFFFFF;
+	transform: translate3d(0, -100%, 0);
+	-webkit-transform: translate3d(0, -100%, 0);
+}
+
+
+.nt-slideDown.nt-element-in .nt-element {
+	-webkit-animation: nt-slideDown-in 0.35s 0s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	animation: nt-slideDown-in 0.35s 0s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+@-webkit-keyframes nt-slideDown-in {
+	from { -webkit-transform: translate3d(0, -100%, 0); }
+	to { -webkit-transform: translate3d(0, 0, 0); }
+}
+@keyframes nt-slideDown-in {
+	from { transform: translate3d(0, -100%, 0); }
+	to { transform: translate3d(0, 0, 0); }
+}
+
+
+.nt-slideDown.nt-element-out .nt-element {
+	-webkit-animation: nt-slideDown-out 0.35s 0s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	animation: nt-slideDown-out 0.35s 0s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+@-webkit-keyframes nt-slideDown-out {
+	from { -webkit-transform: translate3d(0, 0, 0); }
+	to { -webkit-transform: translate3d(0, -100%, 0); }
+}
+@keyframes nt-slideDown-out {
+	from { transform: translate3d(0, 0, 0); }
+	to { transform: translate3d(0, -100%, 0); }
+}
+
+
+.nt-slideUp .nt-element {
+	position: absolute;
+	z-index: 3;
+	bottom:0;
+	left:0;
+	width: 100%;
+	background-color: #FFFFFF;
+	transform: translate3d(0, 100%, 0);
+	-webkit-transform: translate3d(0, 100%, 0);
+}
+
+.nt-slideUp.nt-element-in .nt-element {
+	-webkit-animation: nt-slideUp-in 0.35s 0s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	animation: nt-slideUp-in 0.35s 0s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+@-webkit-keyframes nt-slideUp-in {
+	from { -webkit-transform: translate3d(0, 100%, 0); }
+	to { -webkit-transform: translate3d(0, 0, 0); }
+}
+@keyframes nt-slideUp-in {
+	from { transform: translate3d(0, 100%, 0); }
+	to { transform: translate3d(0, 0, 0); }
+}
+
+
+.nt-slideUp.nt-element-out .nt-element {
+	-webkit-animation: nt-slideUp-out 0.35s 0s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	animation: nt-slideUp-out 0.35s 0s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+@-webkit-keyframes nt-slideUp-out {
+	from { -webkit-transform: translate3d(0, 0, 0); }
+	to { -webkit-transform: translate3d(0, 100%, 0); }
+}
+@keyframes nt-slideUp-out {
+	from { transform: translate3d(0, 0, 0); }
+	to { transform: translate3d(0, 100%, 0); }
+}

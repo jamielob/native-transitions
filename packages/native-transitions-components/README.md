@@ -18,3 +18,11 @@ You can easily roll your own back button template an use whatever icon or text y
 
 If you want to use text, don't forget the `.nt-text` class.  You can find out more in the readme for the `native-transitions-stylus` package readme.
 
+
+
+##ntElements
+
+Put the elements as the last thin in  `nt-content` div
+
+`{{>ntElement name="profileMenu" type="slideDown"}}`
+

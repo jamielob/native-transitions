@@ -1,0 +1,66 @@
+.nt-modal .nt-element {
+	position: absolute;
+	z-index: 3;
+	width: 80%;
+	background-color: #FFFFFF;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	opacity: 0;
+	transform: translate3d(100%, 0, 0);
+ 	-webkit-transform: translate3d(100%, 0, 0);
+ 	display: none;
+}
+
+.nt-modal.nt-element-in .nt-element {
+	display: block;
+ 	transform: translate(-50%, -50%);
+ 	-webkit-transform: translate(-50%, -50%);
+ 	opacity: 1;
+	-webkit-animation: nt-fade-in 0.35s 0s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	animation: nt-fade-in 0.35s 0s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+@-webkit-keyframes nt-fade-in {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+@keyframes nt-fade-in {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+
+.nt-modal.nt-element-out .nt-element {
+	display: block;
+	transform: translate(-50%, -50%);
+ 	-webkit-transform: translate(-50%, -50%);
+ 	opacity: 1;
+	-webkit-animation: nt-fade-out 0.35s 0s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	animation: nt-fade-out 0.35s 0s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+@-webkit-keyframes nt-fade-out {
+	from { opacity: 1; }
+	to { opacity: 0; }
+}
+@keyframes nt-fade-out {
+	from { opacity: 1; }
+	to { opacity: 0; }
+}
+
+
+
+
+/*MODAL*/
+.nt-overlay {
+	z-index: 2;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+.nt-element-in .nt-overlay {
+	display: block;
+	background-color: transparent;
+}

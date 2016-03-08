@@ -15,9 +15,6 @@
 	white-space nowrap
 	-webkit-overflow-scrolling touch
 	padding-right $sliderSpacing + 3 //Add back in margin removed below
-	padding-top $sliderSpacing
-	padding-bottom $sliderSpacing
-	
 	
 	.nt-photo //Whatever the first elements are within the slider, whether they are images, divs, anchors, etc
 		border-radius(2px)
@@ -27,6 +24,8 @@
 		//min-width 100px //So something is show while loading
 		margin-left $sliderSpacing
 		margin-right -3px //Remove inline block extra spacing
+		margin-top $sliderSpacing
+		margin-bottom $sliderSpacing
 		overflow hidden
 	
 		img 	

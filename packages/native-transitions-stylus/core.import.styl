@@ -215,6 +215,7 @@ ul
 		text-align center
 			
 		i
+			vertical-align middle
 			// position absolute
 			// top 50%
 			// -webkit-transform translateY(-50%)
@@ -400,6 +401,19 @@ hr
 		right $padding
 		color $colorGreyMedium
 		font-size 0.7em
+		
+	.nt-note
+		position absolute
+		top 11px
+		right 11px
+		display block
+		font-size 10px
+		text-align right
+		font-weight 300
+		color $colorGreyMedium
+	
+	// &:active
+	// 	background-color $activeBackgroundColor
 
 
 //ICONS
@@ -459,6 +473,7 @@ hr
 	width $avatarSize
 	height $avatarSize
 	display inline-block
+	background-color $colorGreyLight
 	
 .nt-avatar-right
 	padding-right $avatarSize + $padding + 15px
@@ -481,7 +496,7 @@ hr
 		transform translateY(-50%)
 	
 	h2
-		paddin-top 2px
+		padding-top 2px
 		
 
 //RANKS
@@ -731,5 +746,11 @@ hr
 //ACTIVE CLICKS
 // a:active
 // 	background-color $showClickBackgroundColor
+
+
+// //Tap feedback active
+// .tap-feedback-active
+// .tap-feedback:active
+// 	background-color $activeBackgroundColor !important
 
 

@@ -24,7 +24,9 @@ if (Meteor.isClient) {
 	});
 
 	//Add transition to empty placeholder - used so that native transitons work when going ot the tabs, which are really just always there in the background
-	Template.ntPlaceholder.transition();
+	Template.ntPlaceholder.onRendered(function() {
+		nt.transition();
+	});
 
 	//Current tab helper
 	Template.registerHelper('ntCurrentTab', function() {

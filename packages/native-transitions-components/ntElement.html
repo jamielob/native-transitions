@@ -1,0 +1,10 @@
+<template name="ntElement">
+
+	<div class="nt-element-container nt-{{type}}" nt-element="{{name}}">
+		<div class="nt-overlay"></div>
+		<div class="nt-element">
+			{{> Template.dynamic template=name}}
+		</div>
+	</div>
+
+</template>
