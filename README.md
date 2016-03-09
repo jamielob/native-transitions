@@ -30,7 +30,7 @@ Package is [here](packages/native-transitions-header)
 
 ##native-transitions-components
 This package currently just contains a back button helper, but will also contain other componenents that work well with the native transitions, such as modals and slide down menus.
-Package is [here](packages/native-transitions-header)
+Package is [here](packages/native-transitions-components)
 
 ##native-spinner
 This is a native spinner for iOS and Android.  It provide a Meteor interface for [cordova-plugin-spinner](https://www.npmjs.com/package/cordova-plugin-spinner)
