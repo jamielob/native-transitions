@@ -683,14 +683,11 @@ hr
 
 
 //ELEMENTS
-
 .nt-slideDown .nt-element
-	// -webkit-box-shadow 0px 0px 20px 0px rgba(0,0,0,0.1)
-	// box-shadow 0px 0px 20px 0px rgba(0,0,0,0.1)
-	padding-top $headerHeight
 	overflow-x hidden
 	overflow-y scroll
 	-webkit-overflow-scrolling touch
+	
 
 .nt-modal .nt-element
 	z-index 6 //Popups should be on top of headers
@@ -727,6 +724,20 @@ hr
 
 
 		
+//PADDING - primarily used in elements to add the correct padding
+.nt-tabs-padding
+	padding-bottom $tabsHeight
+	
+.nt-header-padding
+	padding-top $headerHeight
+	
+.nt-subheader-padding
+	padding-top $subheaderHeight
+	
+.nt-header-padding.nt-subheader-padding
+	padding-top $headerHeight + $subheaderHeight
+	
+
 
 
 

@@ -20,6 +20,7 @@ nt.triggerElement = function($ntElement) {
 		var $ntTarget = $('[nt-element="' + ntTarget + '"]');
 		//If it's showing 
 		if ( $ntTarget.hasClass('nt-element-in') ) {
+			
 			//If the element has an href, hide it immediately
 			if( $ntElement.attr("href") ) {
 				$ntTarget.removeClass('nt-element-in').removeClass('nt-element-out');

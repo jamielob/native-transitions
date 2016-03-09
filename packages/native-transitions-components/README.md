@@ -22,7 +22,31 @@ If you want to use text, don't forget the `.nt-text` class.  You can find out mo
 
 ##ntElements
 
-Put the elements as the last thin in  `nt-content` div
+Put the elements as the last thing inside the `nt-container` div so that is kept outside of the scrolling area.
 
-`{{>ntElement name="profileMenu" type="slideDown"}}`
+`{{>ntElement name="demoMenu" type="slideDown"}}`
+
+Then just put your element content in a template with the same name:
+
+```<template name="demoMenu">
+		Element content goes here!
+   </template>
+```
+
+If you have headers or tabs, wrap your element content in a div with the relevant class.  For example, if you have a slideDown and a header, you can add the `nt-header-padding` class to a wrapper div.  If you have a slideUp and tabs, you can add the `nt-tabs-padding` class to a wrapper div.
+
+```
+	<template name="demoMenu">
+
+		<div class="nt-header-padding">
+				
+				<a class="nt-item nt-icon-right" href="/logout" nt-target="demoMenu">
+			        Logout
+			        <i class="ion-log-out"></i> 
+			    </a>
+
+		</div>
+		
+	</template>
+```
 
