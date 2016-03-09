@@ -28,7 +28,8 @@ Put the elements as the last thing inside the `nt-container` div so that is kept
 
 Then just put your element content in a template with the same name:
 
-```<template name="demoMenu">
+```
+	<template name="demoMenu">
 		Element content goes here!
    </template>
 ```
