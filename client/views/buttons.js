@@ -1,1 +1,3 @@
-Template.buttons.transition();
+Template.buttons.onRendered(function() {
+	nt.transition();
+});

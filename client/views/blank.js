@@ -1,4 +1,6 @@
-Template.blank.transition({
-	noHeader: true,
-	noTabs: true
+Template.blank.onRendered(function() {
+	nt.transition({
+		noHeader: true,
+		noTabs: true
+	});
 });
