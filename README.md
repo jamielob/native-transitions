@@ -1,6 +1,6 @@
 # Native Transitions Demo
 
-[![Transitions preview](https://dl.dropboxusercontent.com/u/81991394/NativeTransitionsTweet.png)](https://twitter.com/JamieLoberman/status/696957843962920960)
+<a href="https://twitter.com/JamieLoberman/status/696957843962920960" target="_blank">Quick video demo</a>
 
 This is a demo repo for the `native transitions for mobile` packages that I'm building for Meteor 1.3.  Everything in here is liable to change without notice so use at your own risk.
 
