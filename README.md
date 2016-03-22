@@ -1,5 +1,7 @@
 # Native Transitions Demo
 
+[![Transitions preview](https://dl.dropboxusercontent.com/u/81991394/NativeTransitionsTweet.png)](https://twitter.com/JamieLoberman/status/696957843962920960)
+
 This is a demo repo for the `native transitions for mobile` packages that I'm building for Meteor 1.3.  Everything in here is liable to change without notice so use at your own risk.
 
 The native transitions package is usable on it's own without any of the other packages and is as simple to use as calling the function inside onRendered:
